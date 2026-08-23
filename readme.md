@@ -33,6 +33,8 @@ print(f'Hello, {first_name}  {last_name}!')
 
 ## Module 2 (Variables and interactive programs)
 
+##### I have completed exercises 1, 2, 3 and 4
+
 1. Write a program that asks your name and then greets you by your name: Examples:
 
 - If you enter Viivi as your name, the program will greet you with Hello, Viivi!.
