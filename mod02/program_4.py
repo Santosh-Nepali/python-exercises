@@ -21,6 +21,7 @@ for i in range(count):  # loop exactly 'count' times
             number=int(user_input)  # Attempt to conter input string to an integer
         except ValueError:          # Runs only if int() failed or user input is not a number
             print('Please enter a valid number.')   # inform the user input is not valid number and repeat loop
+            #continue                                # return back to while loop
         else:                                       # runs only when error is exeception is eliminated
             sum=sum+number                          # adding the user enter valid number
             product=product*number                  # multiplying user enter number
