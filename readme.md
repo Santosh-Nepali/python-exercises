@@ -31,6 +31,33 @@ print(f'Hello, {first_name}  {last_name}!')
 
 ## Module 2
 
+1. Write a program that asks your name and then greets you by your name: Examples:
+
+- If you enter Viivi as your name, the program will greet you with Hello, Viivi!.
+- If you enter Ahmed as your name, the program will greet you with Hello, Ahmed!.
+
+2. Write a program that asks the user for the radius of a circle and the prints out the area of the circle.
+
+3. Write a program that asks the user for the length and width of a rectangle. The program then prints out the perimeter and area of the rectangle. The perimeter of a rectangle is the sum of the lengths of each four sides.
+
+4. Write a program that asks the user for three integer numbers. The program prints out the sum, product, and average of the numbers.
+
+5. Write a program that asks the user to enter a mass in medieval units: talents (leiviskä), pounds (naula), and lots (luoti). The program converts the input to full kilograms and grams and outputs the result to the user:
+
+- One talent is 20 pounds.
+- One pound is 32 lots.
+- One lot is 13,3 grams.
+
+6. Write a program that draws two random combinations of numbers for a combination lock:
+
+- a 3-digit code where each number is between 0 and 9.
+- a 4-digit code where each number is between 1 and 6.
+
+#### Project 1. Starting the Programming Project Assignment
+
+- Create a separate folder project/ for the game inside the Python exercise project, and create a readme.md file inside it. Add the name of your game as the heading and your own name below it.
+- Create a program in the folder that asks for the player’s name and age, stores them in variables, and prints them to the console.
+
 ## Module 3
 
 ## Acknowledgements
