@@ -20,6 +20,11 @@ A total of 6 points can be earned from the exercises associated with each module
 
 ## Module 3
 
+## Acknowledgements
+
+- [How to write a Good readme]
+  (https://readme.so/editor)
+
 ## Badges
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
