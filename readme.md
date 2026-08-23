@@ -22,8 +22,8 @@ A total of 6 points can be earned from the exercises associated with each module
 
 ## Acknowledgements
 
-- [How to write a Good readme]
-  (https://readme.so/editor)
+-[How to write a Good readme]
+(https://readme.so/editor)
 
 ## Badges
 
