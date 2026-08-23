@@ -39,19 +39,68 @@ print(f'Hello, {first_name}  {last_name}!')
 🤔 Code
 
 ```javascript
+
 # Asking first name surname from users
 first_name=input('Enter your First Name>> ')
 last_name=input('Enter your Surname>> ')
 
 # Print message with Full name of user
 print(f'Hello! {first_name} {last_name}')
+
 ```
 
 2. Write a program that asks the user for the radius of a circle and the prints out the area of the circle.
 
+```javascript
+#Importing math for using their functions
+import math
+
+# Input radius of the circle
+radius=float(input('Enter radius of the cirlce :::: '))
+
+#Assign value for pie
+pi=3.14159
+
+#Calculate are of the circle
+area=pi*pow(radius,2)
+
+#Print area of circle with two decimal point after dot
+print(f'The area of circle having radius = {radius} is ::: {area:0.2f} ')
+
+```
+
 3. Write a program that asks the user for the length and width of a rectangle. The program then prints out the perimeter and area of the rectangle. The perimeter of a rectangle is the sum of the lengths of each four sides.
 
+```javascript
+
+# Input Length and width of the rectangle
+length=input('Enter length of the rectangle ::: ')
+width=input('Enter width of the rectangle ::: ')
+#print(type(length))
+#print(type(width))
+
+# Changing value into numeric value
+length_numeric=float(length)
+width_numeric=float(width)
+# print(type(length_numeric))
+# print(type(width_numeric))
+#Calculate perimeter of the rectangle
+perimeter=2*(length_numeric+width_numeric)
+
+#Calculate area of the rectangle
+area=length_numeric*width_numeric
+
+#Print Perimeter and area of rectangle with two decimal point after dot
+print(f'The perimeter of rectangle of length: {length} and width: {width} is ::: {perimeter:0.2f} ')
+print(f'The area of rectangle of length: {length} and width: {width} is ::: {area:0.2f} ')
+
+```
+
 4. Write a program that asks the user for three integer numbers. The program prints out the sum, product, and average of the numbers.
+
+```javascript
+
+```
 
 5. Write a program that asks the user to enter a mass in medieval units: talents (leiviskä), pounds (naula), and lots (luoti). The program converts the input to full kilograms and grams and outputs the result to the user:
 
@@ -59,10 +108,18 @@ print(f'Hello! {first_name} {last_name}')
 - One pound is 32 lots.
 - One lot is 13,3 grams.
 
+```javascript
+
+```
+
 6. Write a program that draws two random combinations of numbers for a combination lock:
 
 - a 3-digit code where each number is between 0 and 9.
 - a 4-digit code where each number is between 1 and 6.
+
+```javascript
+
+```
 
 #### Project 1. Starting the Programming Project Assignment
 
