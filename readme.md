@@ -16,7 +16,7 @@ A total of 6 points can be earned from the exercises associated with each module
 
 ##### 2. Create a GitHub user account and make a repository for Python exercises. Configure your local project to use the repository as the remote repository for the exercise project. Make sure that you can retrieve, commit, and push the changes you have made (pull, commit, push).
 
-- **code program_1.py of mod01**
+🤔 Code program_1.py of mod01
 
 ```javascript
 
