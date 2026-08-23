@@ -1,8 +1,14 @@
-# Software 1 - Python exercises
+# Software 1 Python Exercises
+
+A total of 6 points can be earned from the exercises associated with each module. The point value of one exercise is obtained by dividing the total points by the number of exercises. Exercises related to the project (marked separately) are assessed as part of the project. Points for these exercises can only be awarded for submissions made on time.
 
 **Name: Santosh Nepali**
 
 ## Module 1
+
+##### 1) Install the development environment. Write a program that greets you using your own name. If your name were Viivi Virta, the program would print: Hello, Viivi Virta!
+
+##### 2) Create a GitHub user account and make a repository for Python exercises. Configure your local project to use the repository as the remote repository for the exercise project. Make sure that you can retrieve, commit, and push the changes you have made (pull, commit, push).
 
 ## Module 2
 
