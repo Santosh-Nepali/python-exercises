@@ -53,7 +53,10 @@ print(f'Hello! {first_name} {last_name}')
 
 2. Write a program that asks the user for the radius of a circle and the prints out the area of the circle.
 
+🤔 Code
+
 ```javascript
+
 #Importing math for using their functions
 import math
 
@@ -72,6 +75,8 @@ print(f'The area of circle having radius = {radius} is ::: {area:0.2f} ')
 ```
 
 3. Write a program that asks the user for the length and width of a rectangle. The program then prints out the perimeter and area of the rectangle. The perimeter of a rectangle is the sum of the lengths of each four sides.
+
+🤔 Code
 
 ```javascript
 
