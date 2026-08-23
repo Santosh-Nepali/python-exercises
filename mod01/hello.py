@@ -1,5 +1,5 @@
 """
-Module_1 Program_1
+Module_1 hello.py
 
 Write a program that greets you using your own name. If your name were Viivi Virta, the program would print: Hello, Viivi Virta!
 """

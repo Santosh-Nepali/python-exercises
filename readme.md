@@ -12,6 +12,8 @@ A total of 6 points can be earned from the exercises associated with each module
 
 ## Module 1 (1 and 2. First Program and Setting Up Version Control)
 
+I have completed exercises 1 and 2
+
 ##### 1. Install the development environment. Write a program that greets you using your own name. If your name were Viivi Virta, the program would print: Hello, Viivi Virta!
 
 ##### 2. Create a GitHub user account and make a repository for Python exercises. Configure your local project to use the repository as the remote repository for the exercise project. Make sure that you can retrieve, commit, and push the changes you have made (pull, commit, push).
