@@ -4,11 +4,11 @@ A total of 6 points can be earned from the exercises associated with each module
 
 ## 🚀 About Me
 
-**Name: Santosh Nepali**
-**University: Metropolia University of Applied Science**
-**Faculty: Bachelor of Information Technology**
-**Group: TXL26S1-B**
-**Student ID: 2630920**
+- **Name:** Santosh Nepali
+- **University:** Metropolia University of Applied Science
+- **Faculty:** Bachelor of Information Technology
+- **Group:** TXL26S1-B
+- **Student ID:** 2630920
 
 ## Module 1
 
