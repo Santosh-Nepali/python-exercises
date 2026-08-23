@@ -29,12 +29,23 @@ print(f'Hello, {first_name}  {last_name}!')
 
 ```
 
-## Module 2
+## Module 2 (Variables and interactive programs)
 
 1. Write a program that asks your name and then greets you by your name: Examples:
 
 - If you enter Viivi as your name, the program will greet you with Hello, Viivi!.
 - If you enter Ahmed as your name, the program will greet you with Hello, Ahmed!.
+
+# module_2 program_1
+
+```javascript
+# Asking first name surname from users
+first_name=input('Enter your First Name>> ')
+last_name=input('Enter your Surname>> ')
+
+# Print message with Full name of user
+print(f'Hello! {first_name} {last_name}')
+```
 
 2. Write a program that asks the user for the radius of a circle and the prints out the area of the circle.
 
