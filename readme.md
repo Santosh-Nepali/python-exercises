@@ -112,6 +112,8 @@ print(f'The area of rectangle of length: {length} and width: {width} is ::: {are
 
 4. Write a program that asks the user for three integer numbers. The program prints out the sum, product, and average of the numbers.
 
+🤔 Code
+
 ```javascript
 sum=0           # Initializing sum as zero for addition
 product=1       # Initializing variable product as 1 for multiplication
@@ -140,7 +142,36 @@ print(f' The average of the number enter is : {sum/count:0.2f}')    # Prints the
 - One pound is 32 lots.
 - One lot is 13,3 grams.
 
+🤔 Code
+
 ```javascript
+lots_from_talents=20*32 #converting from talents to lots
+lots_from_pounds=32     # converting pounds to lots
+grams_per_lot=13.3  # defining grams per lot
+while True:
+    try:
+        talent=float(input('Enter Talents: ')) # Asking talent value from user as string and converting into float type
+        pound=float(input('Enter pounds : '))  # Asking pound value from user as string and converting into float type
+        lot=float(input('enter lots '))       # Asking lots value from user as string and converting into float type
+    except ValueError:
+        print('One of the enter value is not numeric') # if the value is not numerice and through the error
+        continue        # Continues the loop for next numeric value
+    else:               # if user enter value is error free then jumps to this else
+        if talent<=0 or pound<=0 or lot<=0:  #checking the values enter are non-negative or zero
+            print('One the value enter zero or negative')  # displays message zero or negative number
+            continue                                    # continues the while loop
+        lots=(talent*lots_from_talents)+(pound*lots_from_pounds)+lot # Changes all the values to lots
+        #print(f'Lots value is: {lots}')
+        break       # breaks the while loop
+
+# Changing the lots into grams
+total_grams=lots*grams_per_lot # converting lots into grams
+#print(total_grams)
+kilogram=total_grams//1000 # Floor Division operator giving quotient value as kilogram
+grams=total_grams%1000      # remainder operator giving remainder value as grams
+
+print(f'Kilogram :::: {kilogram}')
+print(f'Grams :::: {grams:0.2f}')
 
 ```
 
@@ -149,7 +180,28 @@ print(f' The average of the number enter is : {sum/count:0.2f}')    # Prints the
 - a 3-digit code where each number is between 0 and 9.
 - a 4-digit code where each number is between 1 and 6.
 
+🤔 Code
+
 ```javascript
+
+import random
+
+digit3_code=''  #Assigning string to digit3_code variable
+digit4_code=''  # Assigning string to digit4_code variable
+
+for i in range(3): # looping three times which goes from 0,1,3
+    digit3 = random.randint(0,9) # randomizing the digits between 0 and 9
+    #print(f'{digit3}')
+    digit3_code=digit3_code+str(digit3) # concatenation of digits
+print(f'The 3-digits code is :::: {digit3_code}') #prints 3 digits code
+
+for i in range(4):  # looping four times which runs throuh 0,1,2,3
+    digit4=random.randint(1,6) #randomizing the digits between 1 and 6 inclusively
+    #print(f'{digit4}')
+    digit4_code=digit4_code+str(digit4) # concatination of digits changing tinto string
+print(f'The 4-digits code is :::: {digit4_code}') # prints 4 digits code
+
+
 
 ```
 
