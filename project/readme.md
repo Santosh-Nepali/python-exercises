@@ -1,6 +1,5 @@
-# Haunted House
-
-In this game, the player enter into abandaned house and searches the items inside the rooms and collected the searched items. During the searching the player heard strange noise and escaped from the house.
+# BinLogic
+The player goes at a town's waste collection point, where garbage needs to be sorted correctly. The player picks up the correct bin and sorts it. The correct sorting earns a pooint and incorrect sorting loses a point but reveals the correct bin and a short explanation.
 
 ## 🚀 About Me
 
