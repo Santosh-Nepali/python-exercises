@@ -255,7 +255,31 @@ If the user enters an invalid cabin class, the program outputs an error message 
 ```javascript
 
 
+def display_menu():
+    print('------------------------')
+    print(' Cabin class :: LUX  ')
+    print(' Cabin class :: A ')
+    print(' Cabin class :: B  ')
+    print(' Cabin class :: C ')
+    print('------------------------')
 
+def user_input():
+    user_choose=input('Enter Cabin Class From the Menu ::: ')
+    return user_choose
+
+
+display_menu()    # calling display menu function
+user_selection=user_input()   # calling user input function and assign to the variable
+if user_selection.upper()=='LUX':
+    print(f'You have choosen ::: {user_selection} class\n Features ::: Upper-Deck Cabin with a Balcony ' )
+elif user_selection.upper()=='A':
+    print(f'You have choosen ::: {user_selection} class\n Features ::: Above the Car Deck, equipped with a window  ' )
+elif user_selection.upper()=='B':
+    print(f'You have choosen ::: {user_selection} class\n Features ::: Windowless Cabin Above the  Car Deck  ' )
+elif user_selection.upper()=='C':
+    print(f'You have choosen ::: {user_selection} class\n Features ::: Windowless Cabin Below the  Car Deck ')
+else:
+    print(f'You have entered ::: {user_selection}  Cabin Class, which is Invalid')
 
 ```
 
@@ -296,6 +320,9 @@ If the user enters an invalid cabin class, the program outputs an error message 
 ## Acknowledgements
 
 -[ How to write a Good readme](https://readme.so/editor)
+
+## Debugging line of code for the variable
+print(f"DEBUG: user_selection = {repr(variable_name)}")
 
 ## Badges
 
