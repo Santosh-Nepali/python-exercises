@@ -14,8 +14,12 @@ def gender():       # user-defined function for gender input
 
 def hemoglobin(): # user defined function for hemoglobin input of users
     while True:
+        user_hemoglobin=input('Enter your hemoglobin level in g/l ::')
         try: 
-            user_hemoglobin=int(input('Enter your Hemoglobin Level in g/l'))
+            user_hemoglobin=int(user_hemoglobin)
+            if user_hemoglobin<0:
+                print(f'{user_hemoglobin} is not valid')
+                continue
             break
         except ValueError:
             print('Invalid value')
