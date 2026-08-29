@@ -212,6 +212,8 @@ print(f'The 4-digits code is :::: {digit4_code}') # prints 4 digits code
 
 ## Module 3 (Conditional Structures)
 
+## Done 
+
 1. Write a program that asks a fisher the length of a zander in centimeters. If the zander does not fulfill the size limit, the program instructs to release the fish back into the lake and notifies the user of how many centimeters below the size limit the caught fish was. A zander must be 42 centimeters or longer to meet the size limit.
 
 🤔 Code
@@ -341,7 +343,29 @@ elif user_gender.upper()=='M':
 
 ```javascript
 
+def year(): # user defined function year()
 
+    while True:
+        year_input=input('Enter a Year  ') # Ask for the enter the year
+
+        try:
+            year_input=int(year_input)
+            if year_input<=0:           # checking for years not zero valur or negative
+                print('Enter the positive value')
+                continue                # if user enters negative or zero as input continue the loop
+            break                       # if user enters valid year then break the loop leaving the rest of statement to be executed and exit
+        except ValueError:
+            print('Enter the whole number for the year')
+            continue
+
+    return year_input
+
+year_input=year()  # calling user defined function
+
+if (year_input%4==0 and year_input%100!=0) or (year_input%400==0):  # check condition for leap year or not 
+    print(f'{year_input} is a leap year.')  # true statements of the condition check
+else:
+    print(f'{year_input} is not a leap year.') # false statement of condition check
 
 
 ```
