@@ -5,12 +5,22 @@ Create a program in the folder that asks for the player’s name and age, stores
 
 """
 def user_info():
-    print('Name')
     fname=input('Enter your first name ')
     lname=input('Enter your Last name ')
-    age=input('Enter your age ')
-    
-    print(f'Name :: {fname} {lname}')
-    print(f'Age :: {age}')
 
-user_info()
+    while True:
+        try:
+            age=input('Enter your age ')
+            age=int(age)
+            break
+        except ValueError:
+            print(f' The value is not valid')
+            continue
+    return fname, lname, age
+  
+fname, lname, age=user_info()
+
+print('==========================')
+print(f'Name :: {fname} {lname}')
+print(f'Age  :: {age} years old ')
+print('==========================')
