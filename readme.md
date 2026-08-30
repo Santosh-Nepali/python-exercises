@@ -221,6 +221,7 @@ print(f'The 4-digits code is :::: {digit4_code}') # prints 4 digits code
 ```javascript
 
 
+
 zander_size_limit=47 # variable setting the limit of fish size to catch
 
 print("======= Hello Fisherman ======= ")  # display text
@@ -231,7 +232,7 @@ while True:   # looping until it holds true
         break                           #exit the loop 
 
     except ValueError:                  #value error  
-        print('Value is valid ')        #displays valid 
+        print('Value is not valid ')        #displays invalid 
         continue                        # continue the loop
 
 if zander_size<zander_size_limit:       #Checking the size of standar limit
