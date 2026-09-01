@@ -206,13 +206,15 @@ print(f'The 4-digits code is :::: {digit4_code}') # prints 4 digits code
 ```
 
 #### Project 1. Starting the Programming Project Assignment
-##### I have done 
+
+##### I have done
+
 - Create a separate folder project/ for the game inside the Python exercise project, and create a readme.md file inside it. Add the name of your game as the heading and your own name below it.
 - Create a program in the folder that asks for the player’s name and age, stores them in variables, and prints them to the console.
 
 ## Module 3 (Conditional Structures)
 
-## Done 
+## Done
 
 1. Write a program that asks a fisher the length of a zander in centimeters. If the zander does not fulfill the size limit, the program instructs to release the fish back into the lake and notifies the user of how many centimeters below the size limit the caught fish was. A zander must be 42 centimeters or longer to meet the size limit.
 
@@ -229,10 +231,10 @@ print("======= Hello Fisherman ======= ")  # display text
 while True:   # looping until it holds true
     try:
         zander_size=float(input('Enter the lengthe of Zander you catch in centimeter >>> '))   # asking length of fish and converting into float datatype
-        break                           #exit the loop 
+        break                           #exit the loop
 
-    except ValueError:                  #value error  
-        print('Value is not valid ')        #displays invalid 
+    except ValueError:                  #value error
+        print('Value is not valid ')        #displays invalid
         continue                        # continue the loop
 
 if zander_size<zander_size_limit:       #Checking the size of standar limit
@@ -244,12 +246,11 @@ else:
 
 ```
 
-
 2. Write a program that asks the user to enter the cabin class of a cruise ship and then prints out a written description according to the list below. You must use an if/elif/else structure in your solution.
-LUX: upper-deck cabin with a balcony.
-    A: above the car deck, equipped with a window.
-    B: windowless cabin above the car deck.
-    C: windowless cabin below the car deck.
+   LUX: upper-deck cabin with a balcony.
+   A: above the car deck, equipped with a window.
+   B: windowless cabin above the car deck.
+   C: windowless cabin below the car deck.
 
 If the user enters an invalid cabin class, the program outputs an error message Invalid cabin class.
 
@@ -286,11 +287,9 @@ else:
 
 ```
 
-
-
 3. Write a program that asks for the biological gender and hemoglobin value (g/l). The program the notifies the user if the hemoglobin value is low, normal or high.
-    A normal hemoglobin value for adult females is between 117-155 g/l.
-    A normal hemoglobin value for adult males is between 134-167 g/l.
+   A normal hemoglobin value for adult females is between 117-155 g/l.
+   A normal hemoglobin value for adult males is between 134-167 g/l.
 
 🤔 Code
 
@@ -300,12 +299,12 @@ def gender():       # user-defined function for gender input
     print('Female :::: F')
     print('Male :::: M')
     user_gender=input('Enter your Biological Gender')
-    return user_gender      # returning single value 
+    return user_gender      # returning single value
 
 def hemoglobin(): # user defined function for hemoglobin input of users
     while True:
         user_hemoglobin=input('Enter your hemoglobin level in g/l ::')
-        try: 
+        try:
             user_hemoglobin=int(user_hemoglobin)
             if user_hemoglobin<0:
                 print(f'{user_hemoglobin} is not valid')
@@ -339,9 +338,7 @@ elif user_gender.upper()=='M':
 
 ```
 
-
 4. Write a program that asks the user to enter a year and notifies the user whether the input year is a leap year. A year is a leap year if it is divisible by four. However, years divisible by 100 are leap years only if they are also divisible by 400.
-
 
 🤔 Code
 
@@ -366,7 +363,7 @@ def year(): # user defined function year()
 
 year_input=year()  # calling user defined function
 
-if (year_input%4==0 and year_input%100!=0) or (year_input%400==0):  # check condition for leap year or not 
+if (year_input%4==0 and year_input%100!=0) or (year_input%400==0):  # check condition for leap year or not
     print(f'{year_input} is a leap year.')  # true statements of the condition check
 else:
     print(f'{year_input} is not a leap year.') # false statement of condition check
@@ -374,17 +371,116 @@ else:
 
 ```
 
+## Module 4 (While loops)
 
+## Done
 
+1. Write a program that uses a while loop to print out all numbers divisible by three in the range of 1-1000.
 
+🤔 Code
 
+```javascript
 
+count=1
+while (count<=1000):
+    rem=count%3
+    if(rem==0):
+        print(f'The number {count} is divisible by 3')
+    count=count+1
+
+```
+
+2. Write a program that converts inches to centimeters until the user inputs a negative value. Then the program ends.
+
+🤔 Code
+
+```javascript
+
+inches=float(input('Enter the value for inch'))
+while inches>0:
+    centimeter=inches*2.54
+    print(f'{inches:0.2f} inches is equals to {centimeter:0.2f} centimeter')
+    inches=float(input('Enter negative value to stop the program'))
+print('programs ended')
+
+```
+
+3. Write a program that asks the user to enter numbers until they enter an empty string to quit. Finally, the program prints out the smallest and largest number from the numbers it received.
+
+🤔 Code
+
+```javascript
+
+largest=None        # assigning largest with none type data
+smallest=None       # Assigning smallest with none type data
+while True:
+    print(' ==== Quit(empty input) ==== ')  #print message within
+    num=input('Enter the number: ')
+    if num=='':   #checking condition for empty string input
+        break      # it will exit the loop if condition holds true
+    try:
+        num=float(num)     # changing default string datatype into float for number comparision
+        if largest is None or num>largest:   # checking condition for largest number from user data
+            largest=num                      # assigning number into largest variable
+
+        if smallest is None or num<smallest: # checking condition for smallest number from user data
+            smallest=num                     # assigning number into smallest variable
+    except ValueError:
+        print(f'It is not numeric.')
+
+print(f'Largest  :::: {largest:0.2f}')          # printing largest value from lists
+print(f'Smallest :::: {smallest:0.2f}')        # printing smallest value from list of numbers
+```
+
+4. Write a game where the computer draws a random integer between 1 and 10. The user tries to guess the number until they guess the right number. After each guess the program prints out a text: Too high, Too low or Correct. Notice that the computer must not change the number between guesses.
+
+🤔 Code
+
+```javascript
+import random
+random_value=random.randint(1,10)
+#print(f'{random_value}')
+while True:
+    user_guess=input('Guess the number from 1-10 ::: ')
+    try:
+        user_guess=int(user_guess)
+        if user_guess>random_value:
+            print('You have enter too high number')
+            continue
+
+        elif user_guess<random_value:
+            print('You have enter too low number')
+            continue
+        else:
+            print('Correct')
+            break
+    except ValueError:
+        print('non numeric value')
+
+```
+
+5. Write a program that asks the user for a username and password. If either or both are incorrect, the program ask the user to enter the username and password again. This continues until the login information is correct or wrong credentials have been entered five times. If the information is correct, the program prints out Welcome. After five failed attempts the program prints out Access denied. The correct username is python and password rules.
+
+🤔 Code
+
+```javascript
+
+```
+
+6. mplement an algorithm for calculating an approximation for the value of pi (π). Let’s assume that A is a unit circle. A unit circle has the radius of one and it is centered at the origin (0,0). Smallest possible square B is drawn around the unit circle so that circle A is completely inside the square. The corners of the square are now (-1,-1), (1, -1), (1, 1), and (-1, 1). If a large number of random points are scattered inside the square, the fraction of points that fall inside the circle A correlates with the fraction of the area of circle A compared to the area of square B: πr^2/4 = π\*1^2/4 = π/4. This can be used as a simple method for calculating an approximation of the value of pi: Let’s generate a large number of random points, such as one million, inside square B. Let N be the total number of random points. Each point inside the square is tested for whether it resides inside circle A. Let n be the total number of points that fall inside circle A. Now we have n/N≈π/4, and from that we get π≈4n/N. Write a program that asks the user how many random points to generate, and then calculates the approximate value of pi using the method explained above. At the end, the program prints out the approximation of pi to the user. (Notice that it is easy to test if a point falls inside circle A by testing if it fulfills the inequation x^2+y^2<1.).
+
+🤔 Code
+
+```javascript
+
+```
 
 ## Acknowledgements
 
 -[ How to write a Good readme](https://readme.so/editor)
 
 ## Debugging line of code for the variable
+
 print(f"DEBUG: user_selection = {repr(variable_name)}")
 
 ## Badges

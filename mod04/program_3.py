@@ -10,13 +10,17 @@ smallest=None       # Assigning smallest with none type data
 while True:
     print(' ==== Quit(empty input) ==== ')  #print message within 
     num=input('Enter the number: ')
-    if num=='':                     #checking condition for empty string input
-        break                       # it will exit the loop if condition holds true
-    num=float(num)                  # changing default string datatype into float for number comparision
-    if largest is None or num>largest:   # checking condition for largest number from user data
-        largest=num                      # assigning number into largest variable
-    if smallest is None or num<smallest: # checking condition for smallest number from user data
-        smallest=num                     # assigning number into smallest varible 
-
-print(f'Largest  :::: {largest}')          # printing largest value from lists 
-print(f'Smallest :::: {smallest}')        # printing smallest value from list of numbers
+    if num=='':   #checking condition for empty string input
+        break      # it will exit the loop if condition holds true
+    try:
+        num=float(num)     # changing default string datatype into float for number comparision
+        if largest is None or num>largest:   # checking condition for largest number from user data
+            largest=num                      # assigning number into largest variable
+        
+        if smallest is None or num<smallest: # checking condition for smallest number from user data
+            smallest=num                     # assigning number into smallest variable 
+    except ValueError:
+        print(f'It is not numeric.')
+        
+print(f'Largest  :::: {largest:0.2f}')          # printing largest value from lists 
+print(f'Smallest :::: {smallest:0.2f}')        # printing smallest value from list of numbers
