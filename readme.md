@@ -468,6 +468,7 @@ while True:
 max_attempt=5
 correct_username='python'
 correct_password='rules'
+count=0
 
 def get_user_credentials():
     #print('changes')
@@ -475,14 +476,20 @@ def get_user_credentials():
     password=input('Enter password ::: ')
     return username, password
 
-for count in range(max_attempt):
+#for count in range(max_attempt):
+while(count<max_attempt):
+    print('================================================')
     print(f'{count+1} times out of {max_attempt} attempts')
     uname, pname=get_user_credentials()
-    if uname.strip()==correct_username and pname.strip()==correct_password:
+
+    if uname.strip().lower()==correct_username and pname.strip()==correct_password:
         print('----Welcome----')
         break
+    count=count+1
+    print('================================================')
 else:
     print('Access Denined')
+
 
 ```
 
@@ -491,6 +498,31 @@ else:
 🤔 Code
 
 ```javascript
+
+import random
+points_inside_circle=0 # initializing number of points falls inside the cicle to zero (n)
+counter_loop= 0 # for the repeatation of loops
+while True:
+    get_random_point_generate=input('How many Random point to generate') # asking from user to generate total number of random point (N)
+    try:
+        get_random_point_generate=int(get_random_point_generate)   #checking for only interger value as input
+
+        while(counter_loop<get_random_point_generate):          # looping upto total number of random points to generate
+            x=random.uniform(-1,1)          #generate random of x axis from -1 to 1
+            y=random.uniform(-1,1)          # generate float point uniform for y axix from -1 to 1
+            #print(f'x= {x} y={y}')
+            z=x**2+y**2                     # using pythagorous theorem to find the distances
+            if z<1:                         # checking condition x**2+y**2<1 since radius is 1 and to check whether plotted value falls inside circle or not
+                points_inside_circle+=1     # counting number of points inside the circle
+                #print(f'Points indside the cicle {points_inside_circle}')
+                #print(f'point inside the cicle{z}')
+            counter_loop+=1             #looping counter
+            #print(f'Points outside the circle {z}')
+        break
+    except ValueError:
+        print('invalid data')
+pi=float((4*points_inside_circle)/get_random_point_generate)  # calculating value of pi equating ration of area of cicle to square and area of circle to area of rectangle
+print(f'The pi value is {pi:0.2f}')
 
 ```
 

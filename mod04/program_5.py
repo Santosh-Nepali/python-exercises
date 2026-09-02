@@ -10,6 +10,7 @@ The correct username is python and password rules.
 max_attempt=5       
 correct_username='python'  
 correct_password='rules'
+count=0
 
 def get_user_credentials():
     #print('changes')
@@ -17,11 +18,16 @@ def get_user_credentials():
     password=input('Enter password ::: ')
     return username, password
 
-for count in range(max_attempt):
+#for count in range(max_attempt):
+while(count<max_attempt): 
+    print('================================================')
     print(f'{count+1} times out of {max_attempt} attempts')
     uname, pname=get_user_credentials()
-    if uname.strip()==correct_username and pname.strip()==correct_password:
+
+    if uname.strip().lower()==correct_username and pname.strip()==correct_password:
         print('----Welcome----')
         break
+    count=count+1
+    print('================================================')
 else:
     print('Access Denined')
