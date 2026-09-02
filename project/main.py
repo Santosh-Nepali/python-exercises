@@ -36,11 +36,21 @@ def user_info():
 # Menu Display function
 #----------------------------
 def show_menu():
-    print('==== MENU ====')
+    print('\n\t==== MENU ====')
     print('TAKE || MOVE || DROP || HELP || LOPETA')
-
-  
-
+    
+def command_take():
+    print('Take command')
+    pass
+def command_move():
+    print('Move command')
+    pass
+def command_drop():
+    print('Drop command')
+    pass
+def command_help():
+    print('Help command')
+    pass
 
 #----------------------------
 # MAIN GAME LOOP
@@ -49,7 +59,31 @@ fname, lname, age=user_info()
 if age < 12:
     print(F'{fname} {lname} you are a minor, so you cannot continue the game')
 else:
-    print(f'========== Welcome {fname} {lname} ==========')
+    print(f'\n========== Welcome {fname} {lname} ==========')
+    
+    while True:
+        show_menu()
+        print('\n')
+        command=input('Enter the command :::: ')
+        
+        if command.upper().strip()=='LOPETA':
+            print('Thanks for playing game. Good Bye')
+            break
+        
+        elif command.upper().strip()=='TAKE':
+            command_take()
+        
+        elif command.upper().strip()=='MOVE':
+            command_move()
+        
+        elif command.upper().strip()=='DROP':
+            command_drop()
+        
+        elif command.upper().strip()=='HELP':
+            command_help()
+        else:
+            print(f'{command} is not recognized') 
+    
 #print('==========================')
 #print(f'Name :: {fname} {lname}')
 #print(f'Age  :: {age} years old ')
