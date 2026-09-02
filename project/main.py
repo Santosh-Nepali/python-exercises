@@ -44,9 +44,6 @@ def show_menu():
 
 #----------------------------
 # MAIN GAME LOOP
-# MAIN GAME LOOP
-# MAIN GAME LOOP
-# MAIN GAME LOOP
 #----------------------------
 fname, lname, age=user_info()
 if age < 12:
