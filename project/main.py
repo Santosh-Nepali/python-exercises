@@ -10,6 +10,7 @@ Otherwise, the program greets the user, displays the main menu, and asks for com
 Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again. 
 
 changes is made on the file 
+changes 
 
 """
 
