@@ -7,7 +7,9 @@ Create a program in the folder that asks for the player’s name and age, stores
 Project 2. Main Menu
 Modify the game project program so that if the user enters an age under 12, the program informs them that they are a minor and shuts down.
 Otherwise, the program greets the user, displays the main menu, and asks for commands until the user enters "lopeta".
-Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again.ss
+Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again. 
+
+changes is made on the file 
 
 """
 def user_info():
