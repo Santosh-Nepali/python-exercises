@@ -9,9 +9,6 @@ Modify the game project program so that if the user enters an age under 12, the 
 Otherwise, the program greets the user, displays the main menu, and asks for commands until the user enters "lopeta".
 Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again. 
 
-changes is made on the file 
-changes 
-
 """
 
 #----------------------------
@@ -38,16 +35,35 @@ def user_info():
 def show_menu():
     print('\n\t==== MENU ====')
     print('TAKE || MOVE || DROP || HELP || LOPETA')
-    
+
+
+#----------------------------
+# take command function
+#----------------------------
+
 def command_take():
     print('Take command')
     pass
+
+
+#----------------------------
+# move command function
+#----------------------------
 def command_move():
     print('Move command')
     pass
+
+#----------------------------
+# drop command function
+#----------------------------
 def command_drop():
     print('Drop command')
     pass
+
+
+#----------------------------
+# help command function
+#----------------------------
 def command_help():
     print('Help command')
     pass
