@@ -25,6 +25,10 @@ def user_info():
             print(f' The value is not valid')
             continue
     return fname, lname, age
+
+def show_menu():
+    print('==== MENU ====')
+    print('')
   
 fname, lname, age=user_info()
 
