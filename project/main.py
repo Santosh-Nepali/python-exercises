@@ -12,6 +12,10 @@ Add a few fictional commands that each produce a different output in the console
 changes is made on the file 
 
 """
+
+#----------------------------
+# User information function
+#----------------------------
 def user_info():
     fname=input('Enter your first name ')
     lname=input('Enter your Last name ')
@@ -26,13 +30,29 @@ def user_info():
             continue
     return fname, lname, age
 
+
+#----------------------------
+# Menu Display function
+#----------------------------
 def show_menu():
     print('==== MENU ====')
-    print('')
-  
-fname, lname, age=user_info()
+    print('TAKE || MOVE || DROP || HELP || LOPETA')
 
-print('==========================')
-print(f'Name :: {fname} {lname}')
-print(f'Age  :: {age} years old ')
-print('==========================')
+  
+
+
+#----------------------------
+# MAIN GAME LOOP
+# MAIN GAME LOOP
+# MAIN GAME LOOP
+# MAIN GAME LOOP
+#----------------------------
+fname, lname, age=user_info()
+if age < 12:
+    print(F'{fname} {lname} you are a minor, so you cannot continue the game')
+else:
+    print(f'========== Welcome {fname} {lname} ==========')
+#print('==========================')
+#print(f'Name :: {fname} {lname}')
+#print(f'Age  :: {age} years old ')
+#print('==========================')
