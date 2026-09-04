@@ -562,6 +562,22 @@ print(f'The sum of rolling {number_dice} dices is ::{sum}') #displaying total di
 
 ```javascript
 
+
+numbers_collection=[]
+while True:
+    number=input('Enter number')
+    if number=='':
+        break;
+    else:
+        number=int(number)
+        numbers_collection.append(number)
+
+print(f'The value in the list {numbers_collection}')
+print(f' The sorted number in the list {numbers_collection.sort(reverse=True)}')
+print(f'The value in the list {numbers_collection}')
+
+
+
 ```
 
 3.Write a program that asks the user for an integer and tells if the number is a prime number. Prime numbers are number that are only divisible by one or the number itself.
