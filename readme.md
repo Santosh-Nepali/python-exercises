@@ -576,8 +576,6 @@ print(f'The value in the list {numbers_collection}')
 print(f' The sorted number in the list {numbers_collection.sort(reverse=True)}')
 print(f'The value in the list {numbers_collection}')
 
-
-
 ```
 
 3.Write a program that asks the user for an integer and tells if the number is a prime number. Prime numbers are number that are only divisible by one or the number itself.
@@ -617,6 +615,17 @@ except ValueError:
 
 ```javascript
 
+city_data=[]
+total_city=5
+# using for to input to the name of city
+for _ in range(total_city):
+    city=input('Enter the Name of City ::: ')
+    city_data.append(city)
+
+# using for loop to display the name of the list
+for name_of_city in city_data:
+    print(f'The name of the city is :::: {name_of_city}')
+
 ```
 
 ## Acknowledgements
@@ -626,6 +635,32 @@ except ValueError:
 ## Debugging line of code for the variable
 
 print(f"DEBUG: user_selection = {repr(variable_name)}")
+
+## Note
+
+```javascript
+
+print(f'{iter(numbers_collection)}')
+num_iterator=iter(numbers_collection)
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+
+pythons 'for' loop command iterates over an object using the iterator protocol.
+iterators are objects used to iterate over an iterable and implement iterator protocols.
+A for loops calls iter() on an iterable to create an iterator object.
+The iterator object is responsible for returning each item to the loop.
+A for loop calls next() on the iterator object to fetch each item.
+The next() function raises an StopIteration exception when there is nothing left in the iterator object.
+
+In Python, everything is an object.
+
+```
 
 ## Badges
 

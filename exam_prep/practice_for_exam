@@ -1,0 +1,22 @@
+'''X=3
+y=456
+print("Easy as ", +X)
+print("y divided by 2 is", + y /2)
+name = input("What is your name?")
+print(" name, is"+ str(len(name))+ "letters long.")
+print("That's all folks!")
+my_list = [2, 3, 5, 7, 9]
+for i in range(0, len(my_list)):
+    print(f'{i}')
+    
+for i in range(0, len(my_list), 2):
+  print(my_list[i], end=' ')
+  
+sports=["baseball","football","tennis","table tennis"]
+sports.append("volleyball")
+print(f'{sports}')
+sports.remove("football")
+sports[-2].remove()
+sports.append("soccer")
+print(f'{sports}')
+'''
