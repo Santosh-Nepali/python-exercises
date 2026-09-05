@@ -33,7 +33,7 @@ print(f'Hello, {first_name}  {last_name}!')
 
 ## Module 2 (Variables and interactive programs)
 
-##### I have completed exercises 1, 2, 3, 4, 5 and 6
+## DONE
 
 1. Write a program that asks your name and then greets you by your name: Examples:
 
@@ -207,14 +207,14 @@ print(f'The 4-digits code is :::: {digit4_code}') # prints 4 digits code
 
 #### Project 1. Starting the Programming Project Assignment
 
-##### I have done
+## DONE
 
 - Create a separate folder project/ for the game inside the Python exercise project, and create a readme.md file inside it. Add the name of your game as the heading and your own name below it.
 - Create a program in the folder that asks for the player’s name and age, stores them in variables, and prints them to the console.
 
 ## Module 3 (Conditional Structures)
 
-## Done
+## DONE
 
 1. Write a program that asks a fisher the length of a zander in centimeters. If the zander does not fulfill the size limit, the program instructs to release the fish back into the lake and notifies the user of how many centimeters below the size limit the caught fish was. A zander must be 42 centimeters or longer to meet the size limit.
 
@@ -528,7 +528,7 @@ print(f'The pi value is {pi:0.2f}')
 
 ## Module 5 (List structures and iterative loops (for))
 
-## Progressing
+## DONE
 
 1.Write a program that asks the user how many dice to roll.
 The program rolls all the dice once and prints out the sum of the numbers. Use a for loop.
@@ -625,6 +625,18 @@ for _ in range(total_city):
 # using for loop to display the name of the list
 for name_of_city in city_data:
     print(f'The name of the city is :::: {name_of_city}')
+
+```
+
+## Module 6 (Functions)
+
+## PROGRESSING
+
+1.Write a function that returns a random dice roll between 1 and 6. The function should not have any parameters. Write a main program that rolls the dice until the result is 6. The main program should print out the result of each roll.
+
+🤔 Code
+
+```javascript
 
 ```
 
