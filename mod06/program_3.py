@@ -6,16 +6,16 @@ Write a main program that asks for a volume in gallons from the user and convert
 The conversion must be done by using the function. Conversions continue until the user inputs a negative value.
 
 """
-city_data=[]
-total_city=5
-# using for to input to the name of city
-print('====== Recording Names of City =========')
-for _ in range(total_city):
-    city=input('Enter the Name of City ::: ')
-    city_data.append(city)
-
-# using for loop to display the name of the list 
-
-print('====== Displaying Names of City =========')
-for name_of_city in city_data:
-    print(f'The name of the city is :::: {name_of_city}')
+def gallons_into_litres(gallon):
+    return float(gallon)*3.78541
+    
+while True:
+    try:
+        gallon=input('Enter the gasoline in gallon ')
+        if float(gallon)<0:
+            print('Conversion Ends')
+            break
+        else:
+            print(f' Gasoline = {gallon} gallons equals to {gallons_into_litres(gallon):0.2f} Litres')
+    except ValueError:
+        print('It is not a number.')   

@@ -691,6 +691,20 @@ while True:
 
 ```javascript
 
+def gallons_into_litres(gallon):
+    return float(gallon)*3.78541
+
+while True:
+    try:
+        gallon=input('Enter the gasoline in gallon ')
+        if float(gallon)<0:
+            print('Conversion Ends')
+            break
+        else:
+            print(f' Gasoline = {gallon} gallons equals to {gallons_into_litres(gallon):0.2f} Litres')
+    except ValueError:
+        print('It is not a number.')
+
 ```
 
 4.Write a function that gets a list of integers as a parameter. The function returns the sum of all the numbers in the list. For testing, write a main program where you create a list, call the function, and print out the value it returned.
