@@ -732,6 +732,33 @@ print(f' The sum of {numbers} is :: {sum}')
 
 ```javascript
 
+def even_list_segregator(numbers):
+    list_without_even=[]
+    for number in numbers:
+        if number%2!=0:
+            list_without_even.append(number)
+    return list_without_even
+
+def get_values():
+    numbers=[]
+    n=int(input('How many numbers in the list ? '))
+    if n>0:
+        for i in range(n):
+            value=int(input(f'Enter the {i+1} number:: '))
+            numbers.append(value)
+    else:
+        print('The number of values must be greater than zero')
+    return numbers
+
+
+numbers=get_values()
+if not numbers:
+    print(' The list of numbers is empty. ')
+else:
+    print(f'The List of numbers before removing even {numbers}')
+    print(f'The list after removing even numbers from the list ::: {even_list_segregator(numbers)}')
+
+
 ```
 
 6.Write a function that receives two parameters: the diameter of a round pizza in centimeters and the price of the pizza in euros. The function calculates and returns the unit price of the pizza per square meter. The main program asks the user to enter the diameter and price of two pizzas and tells the user which pizza provides better value for money (which of them has a lower unit price). You must use the function you wrote for calculating the unit prices.
