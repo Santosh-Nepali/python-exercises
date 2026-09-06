@@ -713,6 +713,18 @@ while True:
 
 ```javascript
 
+def addition(numbers):
+    sum=0
+    for i in range(len(numbers)):
+        sum =sum+numbers[i]
+    return(sum)
+    #return sum(numbers)
+
+numbers=[4, 6, 8, 90, 45, 31, -1]
+sum=addition(numbers)
+print(f' The sum of {numbers} is :: {sum}')
+
+
 ```
 
 5.Write a function that gets a list of integers as a parameter. The function returns a second list that is otherwise the same as the original list except that all uneven numbers have been removed. For testing, write a main program where you create a list, call the function, and then print out both the original as well as the cut-down list.
@@ -761,6 +773,12 @@ A for loop calls next() on the iterator object to fetch each item.
 The next() function raises an StopIteration exception when there is nothing left in the iterator object.
 
 In Python, everything is an object.
+
+Simple rule:
+
+Need each value → for number in numbers
+Need a specific position → numbers[index]
+Need both index and value → enumerate(numbers)
 
 ```
 
