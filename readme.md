@@ -657,6 +657,31 @@ while True:
 🤔 Code
 
 ```javascript
+import random
+
+# user defined function for rolling the dice
+def rolling_dice(dice_sides):
+    return(random.randint(1,dice_sides))
+
+# This code check the validity of sides of a dice  i.e. integer only, not zero or negative sides
+while True:
+    dice_sides=input('How many total sides of a dice? ') # asking from users the number of total sides a duce
+    try:
+        dice_sides=int(dice_sides)
+        if dice_sides<=0:
+            print('The sides of a dice needs to be greater than zero')
+        else:
+           break
+    except ValueError:
+        print('Invalid value')
+
+# here loops the user defined function with dice sides as parameter until rolled number is equal to dices sides
+while True:
+    rolled_number=rolling_dice(dice_sides)
+    print(f'{rolled_number}')
+    if rolled_number==dice_sides:
+        break
+
 
 ```
 
