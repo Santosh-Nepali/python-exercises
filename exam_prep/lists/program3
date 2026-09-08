@@ -1,0 +1,15 @@
+def greet(greeting="Hello", times=1):
+    for i in range(times):
+        print(greeting + " " + str(i+1) + ". time")
+    return
+
+greet()
+greet(greeting="Hi", times=3)
+greet(times=2, greeting="Hey")
+
+'''
+Passing parameters using keywords. 
+The programmer can provide parameter values as (name = value) pairs, in which case their order does not matter. 
+Default values can also be given to parameters in the function definition.
+
+'''
