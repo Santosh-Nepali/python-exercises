@@ -740,3 +740,170 @@ print(my_dict)   # {'a': 1, 'b': 2, 'c': 3}
 | A fixed collection that should never change (e.g. function return values, coordinates) | Tuple      |
 | To automatically eliminate duplicates, or do fast "is X in this collection?" checks    | Set        |
 | To look values up by a meaningful label/key instead of position                        | Dictionary |
+
+#### Dictionary
+
+# How Python Dictionaries Work — Detailed Concept
+
+## The core idea: a hash table
+
+A Python dictionary is implemented using a data structure called a **hash table** (sometimes called a hash map). The fundamental goal is to let you look up a value by its key almost instantly, **without** having to search through every single item one by one.# How Python Dictionaries Actually Work
+
+## The core idea: a hash table
+
+A dictionary doesn't store keys in a simple list to search through one by one. Instead, it uses a **hash function** to instantly calculate _where_ each key-value pair should live — like a librarian who can tell you exactly which shelf a book is on just by looking at its title, without checking every shelf.## Walking through the diagram
+
+Each key (`"Ahmed"`, `"Mary"`) is fed into the **hash function**, which crunches the string into a single number (the "hash value"). Python then takes that number and figures out — usually via `hash_value % array_size` — which **bucket (slot)** in the underlying array to store the key-value pair in. That's why `"Ahmed"` lands in bucket 2 and `"Mary"` lands in bucket 5: different keys produce different hash values, and those values map to different slots.
+
+## Why this makes lookups so fast
+
+When you write `numbers["Ahmed"]`, Python **doesn't** scan through every entry checking "is this the key?" one by one (like it would with a list). Instead:
+
+1. It computes `hash("Ahmed")` — the exact same calculation as when the key was first inserted
+2. That hash value points **directly** to bucket 2
+3. Python jumps straight to bucket 2 and retrieves the value
+
+This is why dictionary lookups are described as **O(1)** — "constant time" — meaning it takes roughly the same, very small amount of work whether your dictionary has 5 entries or 5 million.
+
+## What happens when two keys hash to the same bucket? (Collisions)
+
+Occasionally, two completely different keys might compute to the **same** bucket index — this is called a **collision**. CPython handles this using a technique called **open addressing**: if the target bucket is already occupied by a _different_ key, Python systematically checks a sequence of other nearby slots (using a specific probing formula) until it finds an empty one. When looking up a key later, Python re-runs this same probing sequence to relocate it — this all happens invisibly, behind the scenes.
+
+## Why keys must be "hashable"
+
+This also explains something from your earlier data structures table: **why lists and dictionaries can't be used as dictionary keys, but tuples can.** The entire mechanism depends on computing a hash value for the key — but hash values must **never change** for the object's lifetime (otherwise Python would lose track of which bucket it's in). Since lists and dictionaries are **mutable** (their contents can change after creation), Python refuses to hash them at all — hence the `TypeError: unhashable type: 'list'` you'd get if you tried. Tuples, being immutable, are safe to hash (as long as everything _inside_ the tuple is also hashable).
+
+## Connecting this to your phonebook program
+
+```python
+if month in months:
+```
+
+This single line performs the entire process shown in the diagram: it hashes `month`, jumps to the corresponding bucket, and checks whether a matching key is actually stored there — all in roughly constant time, regardless of how many months (or, in a bigger real program, how many thousands of entries) the dictionary holds.
+
+# What the Hash Function Actually Does Internally
+
+## The core job: turn any object into a single integer, consistently
+
+At its simplest, `hash()` takes an object (a string, number, tuple, etc.) and produces an **integer** — but not just any integer. This integer must satisfy a few strict rules for the whole dictionary system to work correctly.
+
+## The three critical properties a hash function must guarantee
+
+### 1. Deterministic (same input → same output, every time within one run)
+
+```python
+print(hash("Ahmed"))
+print(hash("Ahmed"))
+```
+
+Both calls **must** return the exact same number, every single time, for the duration of the program's execution. If they didn't, Python could never find a key again after storing it — imagine filing a book on shelf #7, then the librarian forgetting that "shelf #7" means anything the next time you ask for it.
+
+### 2. Equal objects must have equal hashes
+
+This is a strict rule enforced by Python's design:
+
+```python
+a = "hello"
+b = "hello"
+print(a == b)          # True
+print(hash(a) == hash(b))  # Must also be True
+```
+
+If two objects are considered `==` equal, their hashes **must** match. This is essential — otherwise, `dict["hello"]` might fail to find a value even though a matching key exists, simply because it computed a different hash and looked in the wrong bucket entirely.
+
+### 3. Unequal objects _should_ (ideally) have different hashes — but aren't required to
+
+Two different objects are technically **allowed** to produce the same hash (that's exactly what a "collision," from the earlier diagram, actually is) — but a **good** hash function makes this rare, spreading values as evenly as possible across possible outputs, to minimize how often collisions happen.
+
+## What actually happens for different types
+
+### For strings (like `"Ahmed"`)
+
+CPython uses an algorithm called **SipHash** (specifically, a variant called SipHash-1-3 or SipHash-2-4 depending on version) to compute string hashes. Here's the conceptual process:
+
+1. The string's raw bytes (its UTF-8 encoded character data) are fed into the algorithm
+2. SipHash performs a series of **bitwise mixing operations** — shifts, XORs, and additions — that thoroughly "scramble" the bytes
+3. The result is a single, seemingly-random-looking integer
+
+**Important security detail:** Python **randomizes** the exact hash values of strings **each time you start the Python interpreter** (this is called _hash randomization_, controlled internally by a random seed). This means:
+
+```python
+# Run 1 of your program:
+print(hash("Ahmed"))   # e.g. -4823919274651029384
+
+# Run 2 (fresh restart) of the SAME program:
+print(hash("Ahmed"))   # e.g. 7291028471629384756  (different!)
+```
+
+**Why does Python do this deliberately?** It's a security measure — without randomization, an attacker could deliberately craft input strings designed to all collide into the _same_ bucket (a "hash-flooding" attack), which would make a dictionary's normally-fast O(1) operations degrade to slow O(n) behavior, potentially crashing or freezing a server. Randomizing the hash seed on each run makes this attack impractical, since the attacker can't predict which values will collide.
+
+### For integers
+
+Integers largely hash to **themselves** (with some special handling for negative numbers and very large integers):
+
+```python
+print(hash(5))     # 5
+print(hash(100))   # 100
+print(hash(-1))    # -2  (special case; Python reserves -1 as an internal error signal)
+```
+
+This makes sense — an integer is already a perfectly good, unique "identifier" for itself, so there's no need for complex scrambling.
+
+### For floats
+
+Floats use a more involved calculation designed so that `hash(1.0) == hash(1)` — this matters because `1.0 == 1` is `True` in Python, and remember, **equal objects must have equal hashes**:
+
+```python
+print(hash(1.0))   # 1
+print(hash(1))     # 1  (matches!)
+```
+
+### For tuples
+
+A tuple's hash is computed by **combining the hashes of all its elements** using another mixing algorithm, so that the overall hash depends on both the values _and_ their order:
+
+```python
+print(hash((1, 2, 3)))
+print(hash((3, 2, 1)))   # different hash, even though same numbers, different order
+```
+
+This is also why a tuple is only hashable if **every element inside it** is hashable — `hash((1, [2, 3]))` fails, since you can't compute a hash for the inner list.
+
+## How this connects to your `__hash__` method (for your own custom classes)
+
+Any custom Python class can define its own hashing behavior by implementing a `__hash__()` method:
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __hash__(self):
+        return hash((self.x, self.y))   # reuse tuple's hashing logic
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+```
+
+**Important:** if you override `__eq__` (define what "equal" means for your class), you generally **must** also override `__hash__` consistently — otherwise Python either makes your objects unhashable by default, or risks violating the "equal objects must have equal hashes" rule, silently breaking dictionary/set behavior.
+
+## Turning the hash into an actual bucket index
+
+Once `hash()` produces a (potentially huge, positive-or-negative) integer, Python still needs to convert it into a valid index within the bucket array (which might only have, say, 8 slots). This is done with a modulo-style operation:
+
+```python
+bucket_index = hash_value % array_size
+```
+
+This is the final step shown as the arrow from the "hash(key)" box down to a specific bucket in the earlier diagram — taking a huge, essentially unpredictable number and compressing it down into "which of these 8 slots do we use."
+
+## Summary
+
+| Property                             | Why it matters                                                                                                           |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| **Deterministic**                    | So the same key always maps to the same bucket, every lookup                                                             |
+| **Equal objects → equal hashes**     | So `dict[key]` reliably finds a match even via a different (but equal) object                                            |
+| **Randomized per-run (for strings)** | Security — prevents attackers from engineering deliberate hash collisions                                                |
+| **Type-specific algorithms**         | Strings use SipHash; integers mostly hash to themselves; floats align with equal integers; tuples combine element hashes |
+| **`% array_size`**                   | Converts the raw hash integer into an actual, valid bucket index                                                         |
