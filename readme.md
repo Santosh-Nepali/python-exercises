@@ -630,7 +630,7 @@ for name_of_city in city_data:
 
 ## Module 6 (Functions)
 
-## PROGRESSING
+## Done
 
 1.Write a function that returns a random dice roll between 1 and 6. The function should not have any parameters. Write a main program that rolls the dice until the result is 6. The main program should print out the result of each roll.
 
@@ -797,6 +797,79 @@ else:
     print('Both Pizza has same value')
 
 
+```
+
+## Tuple, set, and dictionary
+
+1. Write a program that asks the user for a number of a month and then prints out the corresponding season (spring, summer, autumn, winter). Save the seasons as strings into a tuple in your program. We can define each season to last three months, December being the first month of winter.
+
+🤔 Code
+
+```javascript
+seasons=('Spring', 'Summer', 'Autumn', 'Winter') # Tuple storing seasons list
+months={
+ "1" : "January",
+ "2" : "February",
+ "3" : "March",
+ "4" : "April",
+ "5" : "May",
+ "6" : "June",
+ "7" : "July",
+ "8" : "August",
+ "9" : "September",
+ "10" : "October",
+ "11" : "November",
+ "12" : "December"
+} # dictionary storing  key values for 12 months
+
+print("***** Season Identifying System (based on month) *****")
+month=input("Enter the month( 1 = January, 2 = February ...... 12 = December ) ::: ")
+if month in months:
+    name_of_month=months[month]
+    print(f'{month}')
+    if month=='12' or month=='1' or month=='2':
+        print(f'The month ::: {name_of_month} belongs ::: {seasons[3]} ')
+    elif month=='3' or month=='4' or month=='5':
+        print(f'The month ::: {name_of_month} belongs ::: {seasons[0]} ')
+    elif month=='9' or month=='10' or month=='11':
+        print(f'The month ::: {name_of_month} belongs ::: {seasons[2]} ')
+    else:
+        print(f'The month ::: {name_of_month} belongs ::: {seasons[1]}' )
+else:
+    print(f'user entered data {month} is not valid')
+
+```
+
+2. Write a program that asks the user to enter names until he/she enters an empty string. After each name is read the program either prints out New name or Existing name depending on whether the name was entered for the first time. Finally, the program lists out the input names one by one, one below another in any order. Use the set data structure to store the names.
+
+🤔 Code
+
+```javascript
+
+name_collection=set()   #Defining the empty set, if set is not empty then we define the set as my_set={2,4,6,7}
+
+while True:     # looping the program until empty space in enter
+    name=input('Enter the name:')
+    name=name.strip().upper()  # remove the space in left and right side of the word and converting in capital letter
+    if name=='':    # if user enter value is empty then it exits the while loop
+        break
+    elif name in name_collection:  # represents each name of the collection set
+        print(f'{name} is Existing name')
+    else:
+        print(f' {name} is new name and adding to the set')
+        name_collection.add(name)
+
+for name in name_collection:
+    print(f'Name :::: {name}')
+
+
+```
+
+3. Write a program for fetching and storing airport data. The program asks the user if they want to enter a new airport, fetch the information of an existing airport or quit. If the user chooses to enter a new airport, the program asks the user to enter the ICAO code and name of the airport. If the user chooses to fetch airport information instead, the program asks for the ICAO code of the airport and prints out the corresponding name. If the user chooses to quit, the program execution ends. The user can choose a new option as many times they want until they choose to quit. (The ICAO code is an identifier that is unique to each airport. For example, the ICAO code of Helsinki-Vantaa Airport is EFHK. You can easily find the ICAO codes of different airports online.)
+
+🤔 Code
+
+```javascript
 
 ```
 
