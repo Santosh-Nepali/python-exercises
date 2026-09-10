@@ -1,4 +1,4 @@
-
+'''
 import string
 import time
 import json
@@ -94,3 +94,5 @@ with open("icao_airports.py", "w", encoding="utf-8") as f:
     f.write("\n")
 
 print("Saved to icao_airports.py")
+
+'''
