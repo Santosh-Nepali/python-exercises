@@ -871,6 +871,66 @@ for name in name_collection:
 
 ```javascript
 
+
+def menu():
+    print('....................................')
+    print('|  Add  | :: Register New Airport')
+    print('....................................')
+    print('| Fetch | :: Access Airport Details')
+    print('....................................')
+    print('| Quit  | :: To exit the program')
+    print('....................................')
+    select =input('Choose One of the MENU from Above :::: ')
+    return select
+
+def add_airport(airport_details):
+    icao=input('Enter ICAO code of the Airport::: ').upper().strip()
+    if icao in airport_details:
+        print(f'{icao} belongs to {airport_details[icao]} already.')
+        confirm=input('Do you want to Overwrite the Airport details? (y/n)').lower().strip()
+        if confirm!='y':
+            print('Cancelled. No change made.')
+            return
+    name=input('What is the Name of Airport? ').strip()
+    airport_details[icao]=name
+
+    for icao in airport_details:
+        print(f'{icao} ::: {airport_details[icao]}')
+    return
+
+def fetch_airport(airport_details):
+    icao=input('Do you know ICAO code of the Airport?::: ').upper().strip()
+    if icao in airport_details:
+        print(f'{icao} belongs to {airport_details[icao]}')
+    else:
+        print(f'{icao} code is not found')
+    return
+
+
+airport_details={
+    'AGAF' : 'Afutara Airport',
+    'AYPY' : 'Jacksons International Airport',
+    'EFHK' : 'Helsinki-Vantaa airport',
+    'EGLL' : 'London Heathrow Airport',
+    'KJFK' : 'John F. Kennedy international Airport',
+    'LFPG' : 'Charles De Gaulle Airport(France)',
+    'YSSY' : 'Sydney Kingsford Airport',
+    'RJTT' : 'Tokyo Haneda Airport(Japan)'
+
+}
+while True:
+        user_choice=menu()
+        if user_choice.upper() =='ADD':
+            add_airport(airport_details)
+        elif user_choice.upper()=='FETCH':
+            fetch_airport(airport_details)
+        elif user_choice.upper()=='QUIT':
+            print('Thank you for visiting')
+            break
+        else:
+            print('Invalid Choice')
+
+
 ```
 
 ## Acknowledgements
