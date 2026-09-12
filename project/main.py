@@ -9,14 +9,35 @@ Modify the game project program so that if the user enters an age under 12, the 
 Otherwise, the program greets the user, displays the main menu, and asks for commands until the user enters "lopeta".
 Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again. 
 
+Project 3. Main Menu Functions and “Inventory”
+Continue developing the game project: Create a separate function for each main menu function (at least three), 
+which is executed when the user selects that function.
+One function must ask the user for information (e.g. an item) that is added to a list variable.
+Another function must print the contents of the list to the user.
+The other functions can be designed and implemented freely.
+
 """
+
+#----------------------------
+# Menu Display function
+#----------------------------
+users_log=[]
+#next_id=1
+
+def show_menu():
+    print('\n\t==== MENU ====')
+    print('TAKE || MOVE || DROP || LOPETA || USER-PROFILE || HELP ')
+
 
 #----------------------------
 # User information function
 #----------------------------
-def user_info():
-    fname=input('Enter your first name ')
-    lname=input('Enter your Last name ')
+def command_signup():
+    #fname=input('Enter your first name ')
+    #lname=input('Enter your Last name ')
+    next_id=1
+    name=input('Enter your name')
+    # user_log={}
 
     while True:
         try:
@@ -26,17 +47,32 @@ def user_info():
         except ValueError:
             print(f' The value is not valid')
             continue
-    return fname, lname, age
+        
+    #assigning each details.
 
+    # Removing users under 12 from the list
+    if age<=12:
+        print(f'{name} you are minor so you cannot continue the game.')
+        return None
+    else:
+        user={
+            "user_id": next_id, 
+            "name":name, 
+            "age":age
+            }
+        users_log.append(user)
+        print(f'User :: {name} added with USER_ID :: {next_id}')
+        next_id+=1
+        return user
+    
 
 #----------------------------
-# Menu Display function
+# User Profile Function
 #----------------------------
-def show_menu():
-    print('\n\t==== MENU ====')
-    print('TAKE || MOVE || DROP || HELP || LOPETA')
-
-
+def command_profile():
+    for user in users_log:
+        print(f'User_id ::{user['user_id']}-- Name :: {user['name']}')
+ 
 #----------------------------
 # take command function
 #----------------------------
@@ -71,11 +107,12 @@ def command_help():
 #----------------------------
 # MAIN GAME LOOP
 #----------------------------
-fname, lname, age=user_info()
-if age < 12:
-    print(F'{fname} {lname} you are a minor, so you cannot continue the game')
+current_user=command_signup()
+#print(f'{current_user}')
+if current_user is None:
+    print(f'Game Shutting Down')
 else:
-    print(f'\n========== Welcome {fname} {lname} ==========')
+    print(f'\n========== Welcome {current_user["name"]} ==========')
     
     while True:
         show_menu()
@@ -97,6 +134,8 @@ else:
         
         elif command.upper().strip()=='HELP':
             command_help()
+        elif command.upper().strip()=='USER-PROFILE':
+            command_profile()
         else:
             print(f'{command} is not recognized') 
     
