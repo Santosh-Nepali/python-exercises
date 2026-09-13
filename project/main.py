@@ -18,14 +18,44 @@ The other functions can be designed and implemented freely.
 
 """
 
+
+#----------------------------
+# Global Data
+#----------------------------
+
+users_log=[]
+inventory=[]  # the list variable that TAKE adds to the INVENTORY prints
+score=0
+current_location="Collection Point"
+bin_locations=["Bio", "Paper", "Energy", "Plastic", "Mixed Waste"]
+all_locations=["Collection Point"]+bin_locations
+waste_items_database=[
+    {"name": "banana peel", "category": "Bio", "fact":"Bio waste like fruit peel can be composted or turned into biogas."},
+    {"name": "apple core", "category": "Bio", "fact":"Food scraps deccompose naturally and idle for composting."},
+    {"name": "used tea bag", "category": "Bio", "fact":"Tea bag without plastic linings break down easily as bio waste"},
+    {"name": "newspaper", "category": "Paper", "fact":"Paper can be recycled up 5-7 times before its fibers become too short to reuse."},
+    {"name": "cardboard box", "category": "Paper", "fact":"Clean, dry cardboard is one of the most recyclable materials available."},
+    {"name": "newspaper", "category": "Paper", "fact":"Paper can be recycled up 5-7 times before its fibers become too short to reuse."},
+    {"name": "notebook", "category": "Paper", "fact": "Paper recycling saves significant water and energy compared to making new paper."},
+    {"name": "broken light bulb", "category": "Energy", "fact": "Some light bulbs need special recycling to recover energy or hazardous elements."},
+    {"name": "old batteries", "category": "Energy",  "fact": "Batteries can be processed to recover metals and energy instead of polluting landfills."},
+    {"name": "used cooking oil", "category": "Energy", "fact": "Used cooking oil can be converted into biodiesel, making it valuable energy waste."},
+    {"name": "plastic bottle", "category": "Plastic", "fact": "A plastic bottle can take up to 450 years to decompose in a landfill."},
+    {"name": "yogurt container", "category": "Plastic", "fact": "Most rigid plastic containers can be recycled if rinsed clean first."},
+    {"name": "plastic bag", "category": "Plastic", "fact": "Thin plastic bags often need special drop-off points instead of regular recycling."},
+    {"name": "broken ceramic mug", "category": "Mixed Waste", "fact": "Ceramics don't melt like glass, so they usually can't be recycled with regular glass."},
+    {"name": "used tissue", "category": "Mixed Waste", "fact": "Used tissues count as general waste due to contamination."},
+    {"name": "greasy pizza box", "category": "Mixed Waste", "fact": "Grease-soaked cardboard usually can't be recycled since the oil contaminates the fibers."},    
+]
+#next_id=1
+
 #----------------------------
 # Menu Display function
 #----------------------------
-users_log=[]
-#next_id=1
 
 def show_menu():
     print('\n\t==== MENU ====')
+    
     print('TAKE || MOVE || DROP || LOPETA || USER-PROFILE || HELP ')
 
 
@@ -70,6 +100,8 @@ def command_signup():
 # User Profile Function
 #----------------------------
 def command_profile():
+    if not users_log:
+        print("Not re")
     for user in users_log:
         print(f'User_id ::{user['user_id']}-- Name :: {user['name']}')
  
