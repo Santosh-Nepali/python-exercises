@@ -134,23 +134,82 @@ def command_take():
     inventory.append(item)
     print(f'You picked up : {item["name"]}')
     print('Carry it to the bin you think is correct, then use DROP. ')
-
-
-
+    
 #----------------------------
 # move command function
+# moves the players between the collection point and the five bins
 #----------------------------
 def command_move():
+    global current_location
+    print(f'Available Locations: {", ".join(all_locations)}')
+    destination=input('Where do you want to move? :::: ').strip()
+    
+    matched=None
+    for location in all_locations:
+        if location.upper()==destination.upper():
+            matched=location
+            break
+    if matched:
+        current_location=matched
+        print(f'You move to {current_location}.')
+    else:
+        print(f'{destination} is not a valid location.')
     print('Move command')
-    pass
+    
 
 #----------------------------
 # drop command function
+# Sort a carried item into into the bin the player is currently standing in 
+# Correct bin : +1 point .. Wrong bin : -1 point with an explanation
 #----------------------------
 def command_drop():
-    print('Drop command')
-    pass
-
+    global score
+    
+    if not inventory:
+        print(' You have nothing to drop. ')
+        return
+    
+    if current_location not in bin_locations:
+        print('This is not a sorting bin. Move to a bin First. ')
+        return
+    
+    item_names=[]
+    for item in inventory:
+        item_names.append(item["name"])
+    print(f' Your inventory: {", ".join(item_names)}')
+    item_name=input('Which item do you want to drop here? ::::: ').strip()
+    
+    matching_item=None
+    for item in inventory:
+        if item["name"]==item_name:
+            matching_item=item
+            break
+    
+    if matching_item is None:
+        print(f'You are not carrying {item_name}.')
+        return
+   
+    if matching_item['category']==current_location:
+        score+=1
+        print(f'Correct! +1 point. (Score: {score})')
+    else:
+        score-=1
+        print(f'Wrong bin! -1 point. (Score: {score})')
+        print(f'Correct bin: {matching_item["category"]}')
+        print(f'Why: {matching_item["fact"]}')
+    
+    #rebuilding the inventory keeping everything except the dropped items
+    new_inventory =[]
+    for item in inventory:
+        if item is not matching_item:
+            new_inventory.append(item)
+    inventory[:]=new_inventory
+        
+#----------------------------
+# score command function
+#----------------------------
+def command_score():
+    print(f'Your current score is: {score}')
 
 #----------------------------
 # help command function
@@ -180,14 +239,13 @@ else:
         elif command.upper().strip()=='INVENTORY':
             command_inventory()
         elif command.upper().strip()=='TAKE':
-            command_take()
-        
+            command_take()    
         elif command.upper().strip()=='MOVE':
             command_move()
-        
         elif command.upper().strip()=='DROP':
             command_drop()
-        
+        elif command.upper().strip()=='SCORE':
+            command_score()
         elif command.upper().strip()=='HELP':
             command_help()
         elif command.upper().strip()=='USER-PROFILE':
