@@ -25,3 +25,12 @@ Project 2. Main Menu
 Modify the game project program so that if the user enters an age under 12, the program informs them that they are a minor and shuts down.
 Otherwise, the program greets the user, displays the main menu, and asks for commands until the user enters "lopeta".
 Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again.
+
+Project 3. Main Menu Functions and “Inventory”
+
+## partially Done (need to test properly)
+
+Continue developing the game project: Create a separate function for each main menu function (at least three), which is executed when the user selects that function.
+One function must ask the user for information (e.g. an item) that is added to a list variable.
+Another function must print the contents of the list to the user.
+The other functions can be designed and implemented freely.
