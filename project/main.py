@@ -102,12 +102,24 @@ def command_signup():
 #----------------------------
 def command_profile():
     if not users_log:
-        print("Not registered users yet.")
+        print('Not registered users yet.')
         return
     for user in users_log:
-        print(f'User_id ::{user['user_id']}-- Name :: {user['name']}')
+        print(f'User_id ::{user["user_id"]}-- Name :: {user["name"]}')
 
- 
+
+#----------------------------
+# inventory command function
+# Prints the contents of the 'inventory' list to the user.
+#----------------------------
+def command_inventory():
+    if not inventory:
+        print('Your inventory is empty.')
+    else:
+        print('Your inventory contains:')
+        for item in inventory:
+            print(f' - {item["name"]}')
+
 #----------------------------
 # take command function
 # only works at the Collection Point, Picks a random waste item annd it to the inventory list variable.
@@ -122,6 +134,7 @@ def command_take():
     inventory.append(item)
     print(f'You picked up : {item["name"]}')
     print('Carry it to the bin you think is correct, then use DROP. ')
+
 
 
 #----------------------------
@@ -164,7 +177,8 @@ else:
         if command.upper().strip()=='LOPETA':
             print('Thanks for playing game. Good Bye')
             break
-        
+        elif command.upper().strip()=='INVENTORY':
+            command_inventory()
         elif command.upper().strip()=='TAKE':
             command_take()
         
