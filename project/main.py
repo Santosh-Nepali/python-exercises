@@ -18,7 +18,7 @@ The other functions can be designed and implemented freely.
 
 """
 
-
+import random
 #----------------------------
 # Global Data
 #----------------------------
@@ -54,9 +54,10 @@ waste_items_database=[
 #----------------------------
 
 def show_menu():
-    print('\n\t==== MENU ====')
+    print('\n\t\t\t ******** MENU ******** ')
+    print(f'\n\t\t (You are at: {current_location} | Score: {score})')
     
-    print('TAKE || MOVE || DROP || LOPETA || USER-PROFILE || HELP ')
+    print('TAKE || MOVE || DROP || LOPETA || INVENTORY || SCORE || USER-PROFILE || HELP ')
 
 
 #----------------------------
@@ -66,12 +67,12 @@ def command_signup():
     #fname=input('Enter your first name ')
     #lname=input('Enter your Last name ')
     next_id=1
-    name=input('Enter your name')
+    name=input('Enter your name :: ')
     # user_log={}
 
     while True:
         try:
-            age=input('Enter your age ')
+            age=input('Enter your age :: ')
             age=int(age)
             break
         except ValueError:
@@ -82,7 +83,7 @@ def command_signup():
 
     # Removing users under 12 from the list
     if age<=12:
-        print(f'{name} you are minor so you cannot continue the game.')
+        print(f'{name} You are minor so you cannot continue the game.')
         return None
     else:
         user={
@@ -101,17 +102,26 @@ def command_signup():
 #----------------------------
 def command_profile():
     if not users_log:
-        print("Not re")
+        print("Not registered users yet.")
+        return
     for user in users_log:
         print(f'User_id ::{user['user_id']}-- Name :: {user['name']}')
+
  
 #----------------------------
 # take command function
+# only works at the Collection Point, Picks a random waste item annd it to the inventory list variable.
 #----------------------------
 
 def command_take():
-    print('Take command')
-    pass
+    global current_location
+    if current_location!='Collection Point':
+        print('There is nothing to take here, Move to the Collection Point first. ')
+        return
+    item=random.choice(waste_items_database)
+    inventory.append(item)
+    print(f'You picked up : {item["name"]}')
+    print('Carry it to the bin you think is correct, then use DROP. ')
 
 
 #----------------------------
@@ -144,7 +154,7 @@ current_user=command_signup()
 if current_user is None:
     print(f'Game Shutting Down')
 else:
-    print(f'\n========== Welcome {current_user["name"]} ==========')
+    print(f'\n\n\t\t --------------- Welcome {current_user["name"]} ---------------')
     
     while True:
         show_menu()

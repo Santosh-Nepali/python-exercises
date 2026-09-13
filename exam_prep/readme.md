@@ -907,3 +907,101 @@ This is the final step shown as the arrow from the "hash(key)" box down to a spe
 | **Randomized per-run (for strings)** | Security — prevents attackers from engineering deliberate hash collisions                                                |
 | **Type-specific algorithms**         | Strings use SipHash; integers mostly hash to themselves; floats align with equal integers; tuples combine element hashes |
 | **`% array_size`**                   | Converts the raw hash integer into an actual, valid bucket index                                                         |
+
+In Python, the `global` keyword is needed inside a function when you want to assign a new value to a variable that belongs to the global scope.
+
+### 1. Without `global`
+
+Python
+
+Run
+
+```
+x = 10
+
+def change():
+    x = 20
+    print(x)
+
+change()
+print(x)
+```
+
+Output:
+
+```
+20
+10
+```
+
+The `x` inside the function is a local variable. It does not change the global `x`.
+
+### 2. Using `global`
+
+Python
+
+Run
+
+```
+x = 10
+
+def change():
+    global x
+    x = 20
+
+change()
+print(x)
+```
+
+Output:
+
+```
+20
+```
+
+Here, `global x` tells Python that `x` refers to the variable in the global scope, so assigning `x = 20` changes the global variable.
+
+### Why is it needed?
+
+Python determines the scope of a variable based on where it is assigned. If a function contains an assignment to `x`, Python normally treats `x` as a local variable throughout that function.
+
+Python
+
+Run
+
+```
+x = 10
+
+def example():
+    print(x)  # Error: local variable 'x' referenced before assignment
+    x = 20
+```
+
+Python considers `x` local because of the assignment, even though a global `x` already exists.
+
+Using `global x` changes that behavior.
+
+### Important: You don't need `global` just to read a variable
+
+Python
+
+Run
+
+```
+x = 10
+
+def show():
+    print(x)
+
+show()
+```
+
+Output:
+
+```
+10
+```
+
+You only need `global` when assigning to the global variable, not when simply reading it.
+
+Remember: `global` tells Python to use the existing global variable instead of creating a local variable when you assign a value inside a function.
