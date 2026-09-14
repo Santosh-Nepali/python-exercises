@@ -105,7 +105,7 @@ def command_profile():
         print('Not registered users yet.')
         return
     for user in users_log:
-        print(f'User_id ::{user["user_id"]}-- Name :: {user["name"]}')
+        print(f'User_id ::{user["user_id"]}\n\t-- Name :: {user["name"]}')
 
 
 #----------------------------
@@ -154,7 +154,7 @@ def command_move():
         print(f'You move to {current_location}.')
     else:
         print(f'{destination} is not a valid location.')
-    print('Move command')
+    #print('Move command')
     
 
 #----------------------------
