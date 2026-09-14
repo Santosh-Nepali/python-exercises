@@ -1,15 +1,18 @@
 """
 Project 1. Starting the Programming Project Assignment
+
 Create a separate folder project/ for the game inside the Python exercise project, and create a readme.md file inside it. Add the name of your game as the heading and your own name below it.
 Create a program in the folder that asks for the player’s name and age, stores them in variables, and prints them to the console.
 
 
 Project 2. Main Menu
+
 Modify the game project program so that if the user enters an age under 12, the program informs them that they are a minor and shuts down.
 Otherwise, the program greets the user, displays the main menu, and asks for commands until the user enters "lopeta".
 Add a few fictional commands that each produce a different output in the console. After a command, always display the menu again. 
 
 Project 3. Main Menu Functions and “Inventory”
+
 Continue developing the game project: Create a separate function for each main menu function (at least three), 
 which is executed when the user selects that function.
 One function must ask the user for information (e.g. an item) that is added to a list variable.
@@ -20,7 +23,7 @@ The other functions can be designed and implemented freely.
 
 import random
 #----------------------------
-# Global Data
+# Global Data variables
 #----------------------------
 
 users_log=[]
@@ -56,7 +59,6 @@ waste_items_database=[
 def show_menu():
     print('\n\t\t\t ******** MENU ******** ')
     print(f'\n\t\t (You are at: {current_location} | Score: {score})')
-    
     print('TAKE || MOVE || DROP || LOPETA || INVENTORY || SCORE || USER-PROFILE || HELP ')
 
 
@@ -108,10 +110,10 @@ def command_profile():
         print(f'User_id ::{user["user_id"]}\n\t-- Name :: {user["name"]}')
 
 
-#----------------------------
+#--------------------------------------------------------
 # inventory command function
 # Prints the contents of the 'inventory' list to the user.
-#----------------------------
+#---------------------------------------------------------
 def command_inventory():
     if not inventory:
         print('Your inventory is empty.')
@@ -120,10 +122,11 @@ def command_inventory():
         for item in inventory:
             print(f' - {item["name"]}')
 
-#----------------------------
+#-----------------------------------------------------------------
 # take command function
-# only works at the Collection Point, Picks a random waste item annd it to the inventory list variable.
-#----------------------------
+# only works at the Collection Point, 
+# Picks a random waste item and it to the inventory list variable.
+#------------------------------------------------------------------
 
 def command_take():
     global current_location
@@ -135,10 +138,10 @@ def command_take():
     print(f'You picked up : {item["name"]}')
     print('Carry it to the bin you think is correct, then use DROP. ')
     
-#----------------------------
+#------------------------------------------------------------------
 # move command function
 # moves the players between the collection point and the five bins
-#----------------------------
+#------------------------------------------------------------------
 def command_move():
     global current_location
     print(f'Available Locations: {", ".join(all_locations)}')
@@ -157,11 +160,12 @@ def command_move():
     #print('Move command')
     
 
-#----------------------------
+#-------------------------------------------------------------------
 # drop command function
-# Sort a carried item into into the bin the player is currently standing in 
+# Sort a carried item into into the bin 
+# the player is currently standing in 
 # Correct bin : +1 point .. Wrong bin : -1 point with an explanation
-#----------------------------
+#--------------------------------------------------------------------
 def command_drop():
     global score
     
