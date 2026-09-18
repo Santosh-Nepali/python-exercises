@@ -1,5 +1,5 @@
 class Item:
-    def calculate_total_price(self, x, y):
+    def calculate_total_price(self,x, y):
         return x*y
 item1=Item() #creating an object of the class
 item1.name="Phone" # assigning value to the name
