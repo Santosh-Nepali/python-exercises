@@ -1,4 +1,6 @@
 """
+Module 8 program 1
+
 Write a Car class that has the following properties: registration number, 
 maximum speed, current speed and travelled distance. 
 Add a class initializer that sets the first two of the properties 
@@ -17,15 +19,18 @@ class Car:
         self.current_speed=0
         self.travel_distance=0
         
-    def drive(self):
+    #def drive(self):
        # print(f'Car registration :: {self.registration_no} \n - Maximum Speed :: {self.max_speed} km/h \n - Current_speed :: {self.current_speed} km/h \n - Distance travel :: {self.travel_distance} km\n')
         
-        print("Car registration ::", self.registration_no, "\n - Maximum Speed ::", self.max_speed, "km/h \n - Current_speed ::", self.current_speed, "km/h \n - Distance travel ::", self.travel_distance, "km\n")
+        #print("Car registration ::", self.registration_no, "\n - Maximum Speed ::", self.max_speed, "km/h \n - Current_speed ::", self.current_speed, "km/h \n - Distance travel ::", self.travel_distance, "km\n")
 
 # creating objects of the class.
 #for i in range(3):
  #   reg_number=input('Enter the registration number of the car[xxx-nnn]: ')
   #  max_speed=input('Enter the maximum speed[km/h]')
     
-    car1=Car(ABC-123, 142)
-    car1.drive()
+car1=Car("ABC-123", 142)
+print("\nCar Registration: ",car1.registration_no)
+print("- Maximum Speed: ",car1.max_speed,"km/h")
+print("- Current Speed: ",car1.current_speed,"km/h")
+print("- Travel Distance: ",car1.travel_distance,"km\n")
