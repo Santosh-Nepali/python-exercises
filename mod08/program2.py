@@ -48,14 +48,14 @@ print(" - Travelled Distance: ",car.travel_distance)
 
 #Accelerating
 car.accelerate(30)
-#print("The current Speed is",car.current_speed,"km/h")
+print("The current Speed after accelerating +30 km/h :: ",car.current_speed,"km/h")
 car.accelerate(70)
-#print("The current Speed is",car.current_speed,"km/h")
+print("The current Speed after accelerating +70 km/h ::",car.current_speed,"km/h")
 car.accelerate(50)
-print("The current Speed is",car.current_speed,"km/h")
+print("The current Speed after accelerating +50 km/h ::",car.current_speed,"km/h")
 
 # Emergency brake
 
 car.accelerate(-200)
-print("The final speed: ",car.current_speed,"km/h")
+print("The final speed after Applying Emergency brake :: ",car.current_speed,"km/h")
 
