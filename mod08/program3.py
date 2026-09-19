@@ -1,11 +1,10 @@
 """
-Module_1 hello.py
+Module_8 program3.py
 
-Write a program that greets you using your own name. If your name were Viivi Virta, the program would print: Hello, Viivi Virta!
+Again, extend the program by adding a new drive method that receives the number of hours as a parameter.
+The method increases the travelled distance by how much the car has travelled in constant speed in the given time.
+Example: The travelled distance of car object is 2000 km.
+The current speed is 60 km/h. Method call car.drive(1.5) increases the travelled distance to 2090 km.
+
+
 """
-# Assigning first name and Surname
-first_name='Santosh'
-last_name='Nepali'
-
-# printing Full name with hello greetings
-print(f'Hello, {first_name}  {last_name}!')
