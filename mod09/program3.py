@@ -1,14 +1,10 @@
 """
-Module 9 program 2
-Extend the previous program by creating a Building class.
-The initializer parameters for the class are the numbers of the bottom and top floors and the number of elevators in the building.
-When a building is created, the building creates the required number of elevators.
-The list of elevators is stored as a property of the building.
-Write a method called run_elevator that accepts the number of the elevator and the destination floor as its parameters.
-In the main program, write the statements for creating a new building and running the elevators of the building.
+Module 9 program 3
 
-
+Extend the program again by adding a method fire_alarm that does not receive any parameters and moves all elevators to the bottom floor.
+Continue the main program by causing a fire alarm in your building.
 """
+
 
 class Elevator:
     def __init__(self, bottom_floor, top_floor):
@@ -51,6 +47,11 @@ class Building:
         self.last_elevator = elevator   # remember exactly which elevator we just moved
         return elevator
 
+    def fire_alarm(self):
+        for elevator in self.elevators_collection:
+            elevator.go_to_floor(self.bottom_floor)
+
+
 # Beginning of main program
 no_of_elevators = 6
 top_floor = 12
@@ -65,7 +66,7 @@ building = Building(bottom_floor, top_floor, no_of_elevators)
 while True:
     try:
         target_elevator_no = int(input("Which Elevator you want to use? [1-6] "))
-        if target_elevator_no>=1 and target_elevator_no <= 6:
+        if 1 <= target_elevator_no <= 6:
             break
         else:
             print("Elevator does not exist.")
@@ -75,7 +76,7 @@ while True:
 while True:
     try:
         target_floor = int(input('Which floor would you like to go? [0-12] '))
-        if target_floor>=0 and target_floor<= 12:
+        if 0 <= target_floor <= 12:
             break
         else:
             print("Floor does not exist.")
@@ -86,3 +87,10 @@ building.run_elevator(target_elevator_no, target_floor)
 
 print(f'You have reached floor {building.last_elevator.current_floor} using elevator {target_elevator_no}')
 
+# Fire alarm
+building.fire_alarm()
+
+#print(f'After the fire alarm, elevator {target_elevator_no} is now at floor {building.last_elevator.current_floor}')
+print("\n--- Fire alarm triggered! Status of all elevators: ---")
+for number, elevator in enumerate(building.elevators_collection, start=1):
+    print(f'Elevator {number}: currently at floor {elevator.current_floor}')
