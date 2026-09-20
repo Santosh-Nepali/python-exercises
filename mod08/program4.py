@@ -16,9 +16,73 @@ Finally, the properties of each car are printed out formatted into a clear table
 
 
 """
-# Assigning first name and Surname
-first_name='Santosh'
-last_name='Nepali'
+import random
+class Car:
+     def __init__(self, registration_no, max_speed):
+          self.registration_no=registration_no
+          self.max_speed=max_speed
+          self.current_speed=0
+          self.distance_travel=0
+     
+     def accelerate(self, change_on_speed):
+          self.change_on_speed=change_on_speed
+          self.current_speed=self.current_speed+change_on_speed
+          if self.current_speed>self.max_speed:
+               self.current_speed=self.max_speed
+               #print(f'current speed:{self.current_speed}')
+          if self.current_speed<0:
+               self.current_speed=0
+          
+          #print(change_on_speed)
+     def drive(self, hours):
+       self.hours=hours
+       self.distance_travel=self.distance_travel+self.hours*self.current_speed
+     
 
-# printing Full name with hello greetings
-print(f'Hello, {first_name}  {last_name}!')
+#main program
+car_object=[]
+
+for count in range(10):
+     registration_no="ABC-"
+     registration_no+=str(count+1)
+     max_speed=random.randint(100,200)
+     #print(registration_no)
+     #print(max_speed)
+     
+     name_object='car'
+     name_object+=str(count)
+     name_object=Car(registration_no, max_speed)
+     car_object.append(name_object)
+
+#for car in car_object:
+ ##   print("******************************")
+   #  print("Registration No. ::", car.registration_no)
+    # print("Maximum Speed ::", car.max_speed,"km/h")
+     #print("Current Speed ::", car.current_speed,"km/h")
+     #rint("Distance Travelled ::", car.distance_travel,"km")
+
+# Run the race, One hour at a time, until a car reaches 10000km 
+hours=0
+while True:
+     for car in car_object:
+          change_speed=random.uniform(-10, 15)
+          # print(change_speed)
+          car.accelerate(change_speed)
+          car.drive(1)       
+          hours+=1
+     #checking if any car has reached at least 10000 km 
+     if any(car.distance_travel>=10000 for car in car_object):
+          break
+          
+print(f"\nRace finished after {hours} hours!\n")
+print(f"{'Registration':<14}{'Max Speed':>4}{'Current Speed':>16}{'Distance':>14}")
+print("-" * 56)  
+
+for car in car_object:
+     print(f"{car.registration_no:<14}" 
+           f"{car.max_speed:>4} km/h"
+           f"{car.current_speed:>11.1f} km/h"
+           f"{car.distance_travel:>11.1f}km")
+     
+     
+     
