@@ -1,34 +1,42 @@
 """
 module_6 program_2
-
-Modify the function above so that it gets the number of sides on the dice as a parameter. 
-With the modified function you can for example roll a 21-sided role-playing dice. 
-The difference to the last exercise is that the dice rolling in the main program continues until the program gets the maximum number on the dice,
-which is asked from the user at the beginning.
-
+Write a program that asks the user to enter numbers until they input an empty string to quit. At the end, the program prints out the five greatest numbers sorted in descending order. 
+Hint: You can reverse the order of sorted list items by using the sort method with the reverse=True argument.
 """
 
-import random
-
-# user defined function for rolling the dice
-def rolling_dice(dice_sides):
-    return(random.randint(1,dice_sides))
-
-# This code check the validity of sides of a dice  i.e. integer only, not zero or negative sides 
+numbers_collection=[]
 while True:
-    dice_sides=input('How many total sides of a dice? ') # asking from users the number of total sides a duce
-    try:
-        dice_sides=int(dice_sides)
-        if dice_sides<=0:
-            print('The sides of a dice needs to be greater than zero')
-        else:
-           break   
-    except ValueError:
-        print('Invalid value')
- 
-# here loops the user defined function with dice sides as parameter until rolled number is equal to dices sides      
-while True:
-    rolled_number=rolling_dice(dice_sides)
-    print(f'{rolled_number}')
-    if rolled_number==dice_sides:
-        break
+    number=input('Enter number')
+    if number=='':
+        break;
+    else:
+        number=int(number)
+        numbers_collection.append(number)
+
+print(f'The value in the list {numbers_collection}')
+print(f' The sorted number in the list {numbers_collection.sort(reverse=True)}')
+print(f'The value in the list {numbers_collection}')
+
+
+'''
+print(f'{iter(numbers_collection)}')  
+num_iterator=iter(numbers_collection)
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+print(f'{next(num_iterator)}')
+
+pythons 'for' loop command iterates over an object using the iterator protocol.
+iterators are objects used to iterate over an iterable and implement iterator protocols.
+A for loops calls iter() on an iterable to create an iterator object.
+The iterator object is responsible for returning each item to the loop.
+A for loop calls next() on the iterator object to fetch each item. 
+The next() function raises an StopIteration exception when there is nothing left in the iterator object.
+
+In Python, everything is an object. 
+'''
+print('test')

@@ -1,5 +1,5 @@
 """
-module_4 program_6
+module_5 program_6
 
 Implement an algorithm for calculating an approximation for the value of pi (π). 
 Let’s assume that A is a unit circle. A unit circle has the radius of one and it is centered at the origin (0,0).

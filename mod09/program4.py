@@ -1,5 +1,6 @@
 """
-Module_8 program4.py
+Module_9 program4.py
+
 Now we will program a car race.
 The travelled distance of a new car is initialized as zero.
 At the beginning of the main program, create a list that consists of 10 car objects created using a loop.

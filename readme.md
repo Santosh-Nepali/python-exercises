@@ -941,9 +941,153 @@ while True:
 
 1. Write a Car class that has the following properties: registration number, maximum speed, current speed and travelled distance. Add a class initializer that sets the first two of the properties based on parameter values. The current speed and travelled distance of a new car must be automatically set to zero. Write a main program where you create a new car (registration number ABC-123, maximum speed 142 km/h). Finally, print out all the properties of the new car.
 
+🤔 Code
+
+```javascript
+# Creating class car with attributes and methods
+class Car:
+    def __init__(self, registration_no='ETB-259', max_speed=60):
+        self.registration_no=registration_no
+        self.max_speed=max_speed
+        self.current_speed=0
+        self.travel_distance=0
+
+    #def drive(self):
+       # print(f'Car registration :: {self.registration_no} \n - Maximum Speed :: {self.max_speed} km/h \n - Current_speed :: {self.current_speed} km/h \n - Distance travel :: {self.travel_distance} km\n')
+
+        #print("Car registration ::", self.registration_no, "\n - Maximum Speed ::", self.max_speed, "km/h \n - Current_speed ::", self.current_speed, "km/h \n - Distance travel ::", self.travel_distance, "km\n")
+
+# creating objects of the class.
+#for i in range(3):
+ #   reg_number=input('Enter the registration number of the car[xxx-nnn]: ')
+  #  max_speed=input('Enter the maximum speed[km/h]')
+
+car1=Car("ABC-123", 142)
+print("\nCar Registration: ",car1.registration_no)
+print("- Maximum Speed: ",car1.max_speed,"km/h")
+print("- Current Speed: ",car1.current_speed,"km/h")
+print("- Travel Distance: ",car1.travel_distance,"km\n")
+```
+
 2. Extend the program by adding an accelerate method into the new class. The method should receive the change of speed (km/h) as a parameter. If the change is negative, the car reduces speed. The method must change the value of the speed property of the object. The speed of the car must stay below the set maximum and cannot be less than zero. Extend the main program so that the speed of the car is first increased by +30 km/h, then +70 km/h and finally +50 km/h. Then print out the current speed of the car. Finally, use the emergency brake by forcing a -200 km/h change on the speed and then print out the final speed. The travelled distance does not have to be updated yet.
 
+🤔 Code
+
+```javascript
+
+# Creating class car with attributes and methods
+class Car:
+    def __init__(self, registration_no, max_speed): #constructor initializer
+        self.registration_no=registration_no
+        self.max_speed=max_speed
+        self.current_speed=0
+        self.travel_distance=0
+
+    def accelerate(self,change_in_speed):
+        self.change_in_speed=change_in_speed
+        self.current_speed=self.current_speed+self.change_in_speed
+        #print(self.current_speed)
+
+        # Checking condition for current_speed must below max_spped
+        if self.current_speed>self.max_speed:
+            print("**** Alert!! you might get overspeed fine. ****\n Your's Current speed :: ",self.current_speed,"km/h")
+            self.current_speed=self.max_speed
+            #print("Good Job, You maintain the maximum speed i.e. ",self.current_speed,"km/h")
+
+        # Checking condition for speed in negative or not.
+        if self.current_speed<0:
+            self.current_speed=0
+            #print("The speed cannot be negative value")
+
+
+# Main program
+# creating objects of the class .
+car=Car("ABC-123", 142)
+
+# Diplaying current details of the car
+print("Registration Number: ",car.registration_no)
+print(" - Maximum Speed: ", car.max_speed)
+print(" - Current Speed: ", car.current_speed)
+print(" - Travelled Distance: ",car.travel_distance)
+
+#Accelerating
+car.accelerate(30)
+print("The current Speed after accelerating +30 km/h :: ",car.current_speed,"km/h")
+car.accelerate(70)
+print("The current Speed after accelerating +70 km/h ::",car.current_speed,"km/h")
+car.accelerate(50)
+print("The current Speed after accelerating +50 km/h ::",car.current_speed,"km/h")
+
+# Emergency brake
+
+car.accelerate(-200)
+print("The final speed after Applying Emergency brake :: ",car.current_speed,"km/h")
+
+
+```
+
 3. Again, extend the program by adding a new drive method that receives the number of hours as a parameter. The method increases the travelled distance by how much the car has travelled in constant speed in the given time. Example: The travelled distance of car object is 2000 km. The current speed is 60 km/h. Method call car.drive(1.5) increases the travelled distance to 2090 km.
+
+🤔 Code
+
+```javascript
+class Car:
+    def __init__(self, registration_no, max_speed): #constructor initializer
+        self.registration_no=registration_no
+        self.max_speed=max_speed
+        self.current_speed=0
+        self.travel_distance=0
+
+    def accelerate(self,change_in_speed):  #method for calculate the current speed
+        self.change_in_speed=change_in_speed
+        self.current_speed=self.current_speed+self.change_in_speed
+        #print(self.current_speed)
+
+        # Checking condition for current_speed must below max_spped
+        if self.current_speed>self.max_speed:
+            print("**** Alert!! you might get overspeed fine. ****\n Your's Current speed :: ",self.current_speed,"km/h")
+            self.current_speed=self.max_speed
+            #print("Good Job, You maintain the maximum speed i.e. ",self.current_speed,"km/h")
+
+        # Checking condition for speed in negative or not.
+        if self.current_speed<0:
+            self.current_speed=0
+            #print("The speed cannot be negative value")
+
+    # logic for calculating the total distance travelled.
+    def drive(self, hours):
+        self.hours=hours
+        self.travel_distance=self.travel_distance+hours*self.current_speed
+# Main program
+# creating objects of the class .
+car=Car("ABC-123", 142)
+
+# Diplaying current details of the car
+print("Registration Number: ",car.registration_no)
+print(" - Maximum Speed: ", car.max_speed,"km/h")
+print(" - Current Speed: ", car.current_speed,"km/h")
+print(" - Travelled Distance: ",car.travel_distance,"km")
+
+#Accelerating
+car.accelerate(30)
+print("The current Speed after accelerating +30 km/h :: ",car.current_speed,"km/h")
+car.accelerate(70)
+print("The current Speed after accelerating +70 km/h ::",car.current_speed,"km/h")
+car.accelerate(50)
+print("The current Speed after accelerating +50 km/h ::",car.current_speed,"km/h")
+car.drive(4)
+
+# Diplaying Details of car After driving for 4 hours with different accelerating speed
+print("Registration Number: ",car.registration_no)
+print(" - Maximum Speed: ", car.max_speed,"km/h")
+print(" - Current Speed: ", car.current_speed,"km/h")
+print(" - Travelled Distance: ",car.travel_distance,"km")
+
+# Emergency brake
+
+car.accelerate(-200)
+print("The final speed after Applying Emergency brake :: ",car.current_speed,"km/h")
+```
 
 4. Now we will program a car race. The travelled distance of a new car is initialized as zero. At the beginning of the main program, create a list that consists of 10 car objects created using a loop. The maximum speed of each new car is a random value between 100 km/h and 200 km/h. The registration numbers are created as follows: “ABC-1”, “ABC-2” and so on. Now the race begins. One per every hour of the race, the following operations are performed:
 
@@ -952,15 +1096,324 @@ while True:
 
 The race continues until one of the cars has advanced at least 10,000 kilometers. Finally, the properties of each car are printed out formatted into a clear table.
 
+🤔 Code
+
+```javascript
+
+import random
+class Car:
+     def __init__(self, registration_no, max_speed):
+          self.registration_no=registration_no
+          self.max_speed=max_speed
+          self.current_speed=0
+          self.distance_travel=0
+
+     def accelerate(self, change_on_speed):
+          self.change_on_speed=change_on_speed
+          self.current_speed=self.current_speed+change_on_speed
+          if self.current_speed>self.max_speed:
+               self.current_speed=self.max_speed
+               #print(f'current speed:{self.current_speed}')
+          if self.current_speed<0:
+               self.current_speed=0
+
+          #print(change_on_speed)
+     def drive(self, hours):
+       self.hours=hours
+       self.distance_travel=self.distance_travel+self.hours*self.current_speed
+
+
+#main program
+car_object=[]
+
+for count in range(10):
+     registration_no="ABC-"
+     registration_no+=str(count+1)
+     max_speed=random.randint(100,200)
+     #print(registration_no)
+     #print(max_speed)
+
+     name_object='car'
+     name_object+=str(count)
+     name_object=Car(registration_no, max_speed)
+     car_object.append(name_object)
+
+#for car in car_object:
+ ##   print("******************************")
+   #  print("Registration No. ::", car.registration_no)
+    # print("Maximum Speed ::", car.max_speed,"km/h")
+     #print("Current Speed ::", car.current_speed,"km/h")
+     #rint("Distance Travelled ::", car.distance_travel,"km")
+
+# Run the race, One hour at a time, until a car reaches 10000km
+hours=0
+while True:
+     for car in car_object:
+          change_speed=random.uniform(-10, 15)
+          # print(change_speed)
+          car.accelerate(change_speed)
+          car.drive(1)
+          hours+=1
+     #checking if any car has reached at least 10000 km
+     if any(car.distance_travel>=10000 for car in car_object):
+          break
+
+print(f"\nRace finished after {hours} hours!\n")
+print(f"{'Registration':<14}{'Max Speed':>4}{'Current Speed':>16}{'Distance':>14}")
+print("-" * 56)
+
+for car in car_object:
+     print(f"{car.registration_no:<14}"
+           f"{car.max_speed:>4} km/h"
+           f"{car.current_speed:>11.1f} km/h"
+           f"{car.distance_travel:>11.1f}km")
+
+```
+
 ## Association
 
-# upto 3 done
+# Done
 
 1. Write an Elevator class that receives the numbers of the bottom and top floors as initializer parameters. The elevator has methods go_to_floor, floor_up and floor_down. A new elevator is always at the bottom floor. If you make elevator h for example the method call h.go_to_floor(5), the method calls either the floor_up or floor_down methods as many times as it needs to get to the fifth floor. The methods run the elevator one floor up or down and tell what floor the elevator is after each move. Test the class by creating an elevator in the main program, tell it to move to a floor of your choice and then back to the bottom floor.
 
+🤔 Code
+
+```javascript
+
+#class called Elevatpr with attribute bottom floor and top floor
+class Elevator:
+    def __init__(self, bottom_floor, top_floor): # constructor initializer which get object(self), bottom_floor and top_floor at attribute
+        self.bottom_floor=bottom_floor
+        self.top_floor=top_floor
+        self.current_floor=self.bottom_floor
+
+    def floor_up(self):
+        self.current_floor+=1
+        #print(f'Current floor :: {self.current_floor}')
+
+    def floor_down(self):
+        self.current_floor-=1
+        #print(f'Current Floor :: {self.current_floor}')
+
+
+    def go_to_floor(self,target_floor):
+        self.target_floor=target_floor
+        #while True:
+        while self.current_floor!=self.target_floor:
+            if self.current_floor<self.target_floor:
+                self.floor_up()
+            else:
+                self.floor_down()
+
+elevator =Elevator(0, 12)
+
+
+while True:
+    try:
+        target_floor=int(input('Which floor would you like to go?[0 - 12] '))
+        if target_floor==0:
+            print(f'You are already on {elevator.current_floor}')
+            break
+        elif target_floor>0 and target_floor<=12:
+            elevator.go_to_floor(target_floor)
+            print(f'You have reached to {elevator.current_floor}')
+            break
+        else:
+            print("Floor does not exist.")
+
+    except ValueError:
+        print('invalid input')
+
+
+
+
+
+```
+
 2. Extend the previous program by creating a Building class. The initializer parameters for the class are the numbers of the bottom and top floors and the number of elevators in the building. When a building is created, the building creates the required number of elevators. The list of elevators is stored as a property of the building. Write a method called run_elevator that accepts the number of the elevator and the destination floor as its parameters. In the main program, write the statements for creating a new building and running the elevators of the building.
 
+🤔 Code
+
+```javascript
+
+class Elevator:
+    def __init__(self, bottom_floor, top_floor):
+        self.bottom_floor = bottom_floor
+        self.top_floor = top_floor
+        self.current_floor = self.bottom_floor
+
+    def floor_up(self):
+        self.current_floor += 1
+
+    def floor_down(self):
+        self.current_floor -= 1
+
+    def go_to_floor(self, target_floor):
+        self.target_floor = target_floor
+        while self.current_floor != self.target_floor:
+            if self.current_floor < self.target_floor:
+                self.floor_up()
+            else:
+                self.floor_down()
+
+
+class Building:
+    def __init__(self, bottom_floor, top_floor, no_of_elevators):
+        self.bottom_floor = bottom_floor
+        self.top_floor = top_floor
+        self.no_of_elevators = no_of_elevators
+
+        self.elevators_collection = []
+        for count in range(self.no_of_elevators):
+            new_elevator = Elevator(self.bottom_floor, self.top_floor)   # local variable, NOT self.elevator
+            self.elevators_collection.append(new_elevator)
+
+    def run_elevator(self, target_elevator_no, target_floor):
+        self.target_floor = target_floor
+        self.target_elevator = target_elevator_no
+
+        elevator = self.elevators_collection[target_elevator_no - 1]   # -1 converts 1-based input to 0-based index
+        elevator.go_to_floor(target_floor)
+        self.last_elevator = elevator   # remember exactly which elevator we just moved
+        return elevator
+
+# Beginning of main program
+no_of_elevators = 6
+top_floor = 12
+bottom_floor = 0
+
+building = Building(bottom_floor, top_floor, no_of_elevators)
+
+# Display elevators numbered 1-6, matching the prompt's expected range
+#for number, elevator in enumerate(building.elevators_collection, start=1):
+   # print(f'{number}  {elevator}')
+
+while True:
+    try:
+        target_elevator_no = int(input("Which Elevator you want to use? [1-6] "))
+        if target_elevator_no>=1 and target_elevator_no <= 6:
+            break
+        else:
+            print("Elevator does not exist.")
+    except ValueError:
+        print("Invalid input")
+
+while True:
+    try:
+        target_floor = int(input('Which floor would you like to go? [0-12] '))
+        if target_floor>=0 and target_floor<= 12:
+            break
+        else:
+            print("Floor does not exist.")
+    except ValueError:
+        print('Invalid input')
+
+building.run_elevator(target_elevator_no, target_floor)
+
+print(f'You have reached floor {building.last_elevator.current_floor} using elevator {target_elevator_no}')
+
+
+```
+
 3. Extend the program again by adding a method fire_alarm that does not receive any parameters and moves all elevators to the bottom floor. Continue the main program by causing a fire alarm in your building.
+
+🤔 Code
+
+```javascript
+
+
+
+
+class Elevator:
+    def __init__(self, bottom_floor, top_floor):
+        self.bottom_floor = bottom_floor
+        self.top_floor = top_floor
+        self.current_floor = self.bottom_floor
+
+    def floor_up(self):
+        self.current_floor += 1
+
+    def floor_down(self):
+        self.current_floor -= 1
+
+    def go_to_floor(self, target_floor):
+        self.target_floor = target_floor
+        while self.current_floor != self.target_floor:
+            if self.current_floor < self.target_floor:
+                self.floor_up()
+            else:
+                self.floor_down()
+
+
+class Building:
+    def __init__(self, bottom_floor, top_floor, no_of_elevators):
+        self.bottom_floor = bottom_floor
+        self.top_floor = top_floor
+        self.no_of_elevators = no_of_elevators
+
+        self.elevators_collection = []
+        for count in range(self.no_of_elevators):
+            new_elevator = Elevator(self.bottom_floor, self.top_floor)   # local variable, NOT self.elevator
+            self.elevators_collection.append(new_elevator)
+
+    def run_elevator(self, target_elevator_no, target_floor):
+        self.target_floor = target_floor
+        self.target_elevator = target_elevator_no
+
+        elevator = self.elevators_collection[target_elevator_no - 1]   # -1 converts 1-based input to 0-based index
+        elevator.go_to_floor(target_floor)
+        self.last_elevator = elevator   # remember exactly which elevator we just moved
+        return elevator
+
+    def fire_alarm(self):
+        for elevator in self.elevators_collection:
+            elevator.go_to_floor(self.bottom_floor)
+
+
+# Beginning of main program
+no_of_elevators = 6
+top_floor = 12
+bottom_floor = 0
+
+building = Building(bottom_floor, top_floor, no_of_elevators)
+
+# Display elevators numbered 1-6, matching the prompt's expected range
+#for number, elevator in enumerate(building.elevators_collection, start=1):
+   # print(f'{number}  {elevator}')
+
+while True:
+    try:
+        target_elevator_no = int(input("Which Elevator you want to use? [1-6] "))
+        if 1 <= target_elevator_no <= 6:
+            break
+        else:
+            print("Elevator does not exist.")
+    except ValueError:
+        print("Invalid input")
+
+while True:
+    try:
+        target_floor = int(input('Which floor would you like to go? [0-12] '))
+        if 0 <= target_floor <= 12:
+            break
+        else:
+            print("Floor does not exist.")
+    except ValueError:
+        print('Invalid input')
+
+building.run_elevator(target_elevator_no, target_floor)
+
+print(f'You have reached floor {building.last_elevator.current_floor} using elevator {target_elevator_no}')
+
+# Fire alarm
+building.fire_alarm()
+
+#print(f'After the fire alarm, elevator {target_elevator_no} is now at floor {building.last_elevator.current_floor}')
+print("\n--- Fire alarm triggered! Status of all elevators: ---")
+for number, elevator in enumerate(building.elevators_collection, start=1):
+    print(f'Elevator {number}: currently at floor {elevator.current_floor}')
+
+```
 
 4. This exercise continues the previous car race exercise from the last exercise set. Write a Race class that has the following properties: name, distance in kilometers and a list of cars participating in the race. The class has an initializer that receives the name, kilometers, and car list as parameters and sets their values to the corresponding properties in the class. The class has the following methods:
 
@@ -969,6 +1422,200 @@ hour_passes, which performs the operations done once per hour in the original ex
 print_status, which prints out the current information of each car as a clear, formatted table.
 race_finished, which returns True if any of the cars has reached the finish line, meaning that they have driven the entire distance of the race.
 Write a main program that creates an 8000-kilometer race called Grand Demolition Derby. The new race is given a list of ten cars similarly to the earlier exercise. The main program simulates the progressing of the race by calling the hour_passes in a loop, after which it uses the race_finished method to check if the race has finished. The current status is printed out using the print_status method every ten hours and then once more at the end of the race.
+
+🤔 Code
+
+```javascript
+import random
+class Car:
+     def __init__(self, registration_no, max_speed):
+          self.registration_no=registration_no
+          self.max_speed=max_speed
+          self.current_speed=0
+          self.distance_travel=0
+
+     def accelerate(self, change_on_speed):
+          self.change_on_speed=change_on_speed
+          self.current_speed=self.current_speed+change_on_speed
+          if self.current_speed>self.max_speed:
+               self.current_speed=self.max_speed
+               #print(f'current speed:{self.current_speed}')
+          if self.current_speed<0:
+               self.current_speed=0
+
+          #print(change_on_speed)
+     def drive(self, hours):
+       self.hours=hours
+       self.distance_travel=self.distance_travel+self.hours*self.current_speed
+
+class Race:
+     def __init__(self, name, distance, car_list):
+          self.name=name
+          self.distance=distance
+          self.car_list=car_list
+
+     def hour_passes(self):
+          for car in self.car_list:
+               change_speed=random.uniform(-10, 15)
+               car.accelerate(change_speed)
+               car.drive(1)
+
+     def print_status(self):
+          print(f"{'Registration':<14}{'Max Speed':>12}{'Current Speed':>16}{'Distance':>14}")
+          print("-" * 56)
+          for car in self.car_list:
+               print(f"{car.registration_no:<14}"
+                     f"{car.max_speed:>9} km/h"
+                    f"{car.current_speed:>13.1f} km/h"
+                    f"{car.distance_travel:>11.1f} km")
+
+     def race_finished(self):
+          return any(car.distance_travel>=self.distance for car in self.car_list)
+
+
+#main program
+car_object=[]
+
+for count in range(10):
+     registration_no="ABC-"
+     registration_no+=str(count+1)
+     max_speed=random.randint(100,200)
+     #print(registration_no)
+     #print(max_speed)
+
+     name_object='car'
+     name_object+=str(count)
+     name_object=Car(registration_no, max_speed)
+     car_object.append(name_object)
+race=Race("Grand Demolition Derby", 8000, car_object)
+
+#for car in car_object:
+ ##   print("******************************")
+   #  print("Registration No. ::", car.registration_no)
+    # print("Maximum Speed ::", car.max_speed,"km/h")
+     #print("Current Speed ::", car.current_speed,"km/h")
+     #rint("Distance Travelled ::", car.distance_travel,"km")
+
+# Run the race, One hour at a time, until a car reaches 10000km
+hours = 0
+while True:
+    race.hour_passes()   # generate a random change of speed for each car and calls their drive method.
+    hours += 1
+
+    if hours % 10 == 0:       #print out every ten hours
+        race.print_status()
+
+    if race.race_finished():
+        break
+
+print(f"\nRace finished after {hours} hours!")  # then once more ate the end the race
+race.print_status()
+```
+
+## Inheritance
+
+# Done
+
+1. Implement the following class hierarchy using Python: A publication can be either a book or a magazine. Each publication has a name. Each book also has an author and a page count, whereas each magazine has a chief editor. Also write the required initializers to both classes. Create a print_information method to both subclasses for printing out all information of the publication in question. In the main program, create publications Donald Duck (chief editor Aki Hyyppä) and Compartment No. 6 (author Rosa Liksom, 192 pages). Print out all information of both publications using the methods you implemented.
+
+🤔 Code
+
+```javascript
+
+class Publication:
+    def __init__(self, publication_name):
+        self.publication_name=publication_name
+
+    def print_information(self):
+        print(f"Publication : {self.publication_name}")
+
+class Book(Publication):
+    def __init__(self, publication_name, title, author, page_count):
+        super().__init__(publication_name)
+        self.title=title
+        self.author=author
+        self.page_count=page_count
+
+    def print_information(self):
+        super().print_information()
+        print(f" - Title:  {self.title}")
+        print(f" - Author: {self.author}")
+        print(f" - Page Count : {self.page_count}")
+
+class Magazine(Publication):
+    def __init__(self, publication_name, chief_editor):
+        super().__init__(publication_name)
+        self.chief_editor=chief_editor
+
+    def print_information(self):
+        super().print_information()
+        print(f" - Chief Editor:  {self.chief_editor}")
+
+details=[]
+details.append(Book('Donald Duck', 'CompartmentNo6', 'Rosa Liksom', '192'))
+details.append(Magazine('Donald Duck', 'Aki Hyyppä'))
+for d in details:
+    print("-"*30)
+    d.print_information()
+
+
+
+```
+
+2. Extend the previously written Car class by adding two subclasses: ElectricCar and GasolineCar. Electric cars have the capacity of the battery in kilowatt-hours as their property. Gasoline cars have the volume of the tank in liters as their property. Write initializers for the subclasses. For example, the initializer of electric cars receives the registration number, maximum speed and battery capacity as its parameter. It calls the initializer of the base class to set the first two properties and then sets its capacity. Write a main program where you create one electric car (ABC-15, 180 km/h, 52.5 kWh) and one gasoline car (ACD-123, 165 km/h, 32.3 l). Select speeds for both cars, make them drive for three hours and print out the values of their kilometer counters.
+
+🤔 Code
+
+```javascript
+
+import random
+
+
+class Car:
+    def __init__(self, registration_no, max_speed):
+        self.registration_no = registration_no
+        self.max_speed = max_speed
+        self.current_speed = 0
+        self.distance_travel = 0
+
+    def accelerate(self, change_on_speed):
+        self.current_speed = self.current_speed + change_on_speed
+        if self.current_speed > self.max_speed:
+            self.current_speed = self.max_speed
+        if self.current_speed < 0:
+            self.current_speed = 0
+
+    def drive(self, hours):
+        self.distance_travel = self.distance_travel + hours * self.current_speed
+
+
+class ElectricCar(Car):
+    def __init__(self, registration_no, max_speed, battery_capacity):
+        super().__init__(registration_no, max_speed)   # sets registration_no and max_speed
+        self.battery_capacity = battery_capacity         # the new, electric-specific property
+
+
+class GasolineCar(Car):
+    def __init__(self, registration_no, max_speed, tank_volume):
+        super().__init__(registration_no, max_speed)   # sets registration_no and max_speed
+        self.tank_volume = tank_volume                   # the new, gasoline-specific property
+
+
+# ----------------------------
+# Main program
+# ----------------------------
+electric_car = ElectricCar("ABC-15", 180, 52.5)
+gasoline_car = GasolineCar("ACD-123", 165, 32.3)
+
+electric_car.accelerate(100)
+gasoline_car.accelerate(90)
+
+electric_car.drive(3)
+gasoline_car.drive(3)
+
+print(f"Electric car {electric_car.registration_no}: {electric_car.distance_travel} km")
+print(f"Gasoline car {gasoline_car.registration_no}: {gasoline_car.distance_travel} km")
+```
 
 -[ How to write a Good readme](https://readme.so/editor)
 

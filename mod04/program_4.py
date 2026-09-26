@@ -1,28 +1,31 @@
-"""
+'''
 module_4 program_4
-Write a game where the computer draws a random integer between 1 and 10. 
-The user tries to guess the number until they guess the right number.
-After each guess the program prints out a text: Too high, Too low or Correct.
-Notice that the computer must not change the number between guesses.
-"""
+Write a program that asks the user to enter a year and notifies the user whether the input year is a leap year. 
+A year is a leap year if it is divisible by four. 
+However, years divisible by 100 are leap years only if they are also divisible by 400.
 
-import random
-random_value=random.randint(1,10)
-#print(f'{random_value}')
-while True:
-    user_guess=input('Guess the number from 1-10 ::: ')
-    try:
-        user_guess=int(user_guess)
-        if user_guess>random_value:
-            print('You have enter too high number')
+'''
+
+def year(): # user defined function year()
+
+    while True:
+        year_input=input('Enter a Year  ') # Ask for the enter the year
+
+        try:
+            year_input=int(year_input)
+            if year_input<=0:           # checking for years not zero valur or negative
+                print('Enter the positive value')
+                continue                # if user enters negative or zero as input continue the loop
+            break                       # if user enters valid year then break the loop leaving the rest of statement to be executed and exit
+        except ValueError:
+            print('Enter the whole number for the year')
             continue
-        
-        elif user_guess<random_value:
-            print('You have enter too low number')
-            continue
-        else:
-            print('Correct')
-            break
-    except ValueError:
-        print('non numeric value')        
-        
+
+    return year_input
+
+year_input=year()  # calling user defined function
+
+if (year_input%4==0 and year_input%100!=0) or (year_input%400==0):  # check condition for leap year or not 
+    print(f'{year_input} is a leap year.')  # true statements of the condition check
+else:
+    print(f'{year_input} is not a leap year.') # false statement of condition check

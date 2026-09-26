@@ -1,96 +1,66 @@
 """
-Module 9 program 3
+Module_9 program3.py
 
-Extend the program again by adding a method fire_alarm that does not receive any parameters and moves all elevators to the bottom floor.
-Continue the main program by causing a fire alarm in your building.
+Again, extend the program by adding a new drive method that receives the number of hours as a parameter.
+The method increases the travelled distance by how much the car has travelled in constant speed in the given time.
+Example: The travelled distance of car object is 2000 km.
+The current speed is 60 km/h. Method call car.drive(1.5) increases the travelled distance to 2090 km.
+
+
 """
+class Car:
+    def __init__(self, registration_no, max_speed): #constructor initializer
+        self.registration_no=registration_no
+        self.max_speed=max_speed
+        self.current_speed=0
+        self.travel_distance=0
+        
+    def accelerate(self,change_in_speed):  #method for calculate the current speed
+        self.change_in_speed=change_in_speed
+        self.current_speed=self.current_speed+self.change_in_speed
+        #print(self.current_speed)
+        
+        # Checking condition for current_speed must below max_spped
+        if self.current_speed>self.max_speed:
+            print("**** Alert!! you might get overspeed fine. ****\n Your's Current speed :: ",self.current_speed,"km/h")
+            self.current_speed=self.max_speed
+            #print("Good Job, You maintain the maximum speed i.e. ",self.current_speed,"km/h")
+        
+        # Checking condition for speed in negative or not. 
+        if self.current_speed<0:
+            self.current_speed=0
+            #print("The speed cannot be negative value")
+    
+    # logic for calculating the total distance travelled.
+    def drive(self, hours):
+        self.hours=hours
+        self.travel_distance=self.travel_distance+hours*self.current_speed
+# Main program
+# creating objects of the class .    
+car=Car("ABC-123", 142)
 
+# Diplaying current details of the car
+print("Registration Number: ",car.registration_no)
+print(" - Maximum Speed: ", car.max_speed,"km/h")
+print(" - Current Speed: ", car.current_speed,"km/h")
+print(" - Travelled Distance: ",car.travel_distance,"km")
 
-class Elevator:
-    def __init__(self, bottom_floor, top_floor):
-        self.bottom_floor = bottom_floor
-        self.top_floor = top_floor
-        self.current_floor = self.bottom_floor
+#Accelerating
+car.accelerate(30)
+print("The current Speed after accelerating +30 km/h :: ",car.current_speed,"km/h")
+car.accelerate(70)
+print("The current Speed after accelerating +70 km/h ::",car.current_speed,"km/h")
+car.accelerate(50)
+print("The current Speed after accelerating +50 km/h ::",car.current_speed,"km/h")
+car.drive(4)
 
-    def floor_up(self):
-        self.current_floor += 1
+# Diplaying Details of car After driving for 4 hours with different accelerating speed
+print("Registration Number: ",car.registration_no)
+print(" - Maximum Speed: ", car.max_speed,"km/h")
+print(" - Current Speed: ", car.current_speed,"km/h")
+print(" - Travelled Distance: ",car.travel_distance,"km")
 
-    def floor_down(self):
-        self.current_floor -= 1
+# Emergency brake
 
-    def go_to_floor(self, target_floor):
-        self.target_floor = target_floor
-        while self.current_floor != self.target_floor:
-            if self.current_floor < self.target_floor:
-                self.floor_up()
-            else:
-                self.floor_down()
-
-
-class Building:
-    def __init__(self, bottom_floor, top_floor, no_of_elevators):
-        self.bottom_floor = bottom_floor
-        self.top_floor = top_floor
-        self.no_of_elevators = no_of_elevators
-
-        self.elevators_collection = []
-        for count in range(self.no_of_elevators):
-            new_elevator = Elevator(self.bottom_floor, self.top_floor)   # local variable, NOT self.elevator
-            self.elevators_collection.append(new_elevator)
-
-    def run_elevator(self, target_elevator_no, target_floor):
-        self.target_floor = target_floor
-        self.target_elevator = target_elevator_no
-
-        elevator = self.elevators_collection[target_elevator_no - 1]   # -1 converts 1-based input to 0-based index
-        elevator.go_to_floor(target_floor)
-        self.last_elevator = elevator   # remember exactly which elevator we just moved
-        return elevator
-
-    def fire_alarm(self):
-        for elevator in self.elevators_collection:
-            elevator.go_to_floor(self.bottom_floor)
-
-
-# Beginning of main program
-no_of_elevators = 6
-top_floor = 12
-bottom_floor = 0
-
-building = Building(bottom_floor, top_floor, no_of_elevators)
-
-# Display elevators numbered 1-6, matching the prompt's expected range
-#for number, elevator in enumerate(building.elevators_collection, start=1):
-   # print(f'{number}  {elevator}')
-
-while True:
-    try:
-        target_elevator_no = int(input("Which Elevator you want to use? [1-6] "))
-        if 1 <= target_elevator_no <= 6:
-            break
-        else:
-            print("Elevator does not exist.")
-    except ValueError:
-        print("Invalid input")
-
-while True:
-    try:
-        target_floor = int(input('Which floor would you like to go? [0-12] '))
-        if 0 <= target_floor <= 12:
-            break
-        else:
-            print("Floor does not exist.")
-    except ValueError:
-        print('Invalid input')
-
-building.run_elevator(target_elevator_no, target_floor)
-
-print(f'You have reached floor {building.last_elevator.current_floor} using elevator {target_elevator_no}')
-
-# Fire alarm
-building.fire_alarm()
-
-#print(f'After the fire alarm, elevator {target_elevator_no} is now at floor {building.last_elevator.current_floor}')
-print("\n--- Fire alarm triggered! Status of all elevators: ---")
-for number, elevator in enumerate(building.elevators_collection, start=1):
-    print(f'Elevator {number}: currently at floor {elevator.current_floor}')
+car.accelerate(-200)
+print("The final speed after Applying Emergency brake :: ",car.current_speed,"km/h")

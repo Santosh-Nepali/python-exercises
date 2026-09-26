@@ -1,59 +1,36 @@
 """
 Module 9 program 1
 
-Write an Elevator class that receives the numbers of the bottom and top floors as initializer parameters. 
-The elevator has methods go_to_floor, floor_up and floor_down. 
-A new elevator is always at the bottom floor. 
-If you make elevator h for example the method call h.go_to_floor(5),
-the method calls either the floor_up or floor_down methods as many times as it needs to get to the fifth floor.
-The methods run the elevator one floor up or down and tell what floor the elevator is after each move. 
-Test the class by creating an elevator in the main program, tell it to move to a floor of your choice and then back to the bottom floor.
-
-
+Write a Car class that has the following properties: registration number, 
+maximum speed, current speed and travelled distance. 
+Add a class initializer that sets the first two of the properties 
+based on parameter values. 
+The current speed and travelled distance of a new car must be 
+automatically set to zero. 
+Write a main program where you create a new car 
+(registration number ABC-123, maximum speed 142 km/h).
+Finally, print out all the properties of the new car.
 """
-#class called Elevatpr with attribute bottom floor and top floor
-class Elevator:
-    def __init__(self, bottom_floor, top_floor): # constructor initializer which get object(self), bottom_floor and top_floor at attribute
-        self.bottom_floor=bottom_floor
-        self.top_floor=top_floor
-        self.current_floor=self.bottom_floor
-            
-    def floor_up(self):
-        self.current_floor+=1
-        #print(f'Current floor :: {self.current_floor}')
-
-    def floor_down(self):
-        self.current_floor-=1
-        #print(f'Current Floor :: {self.current_floor}')
+# Creating class car with attributes and methods
+class Car:
+    def __init__(self, registration_no='ETB-259', max_speed=60):
+        self.registration_no=registration_no
+        self.max_speed=max_speed
+        self.current_speed=0
+        self.travel_distance=0
         
+    #def drive(self):
+       # print(f'Car registration :: {self.registration_no} \n - Maximum Speed :: {self.max_speed} km/h \n - Current_speed :: {self.current_speed} km/h \n - Distance travel :: {self.travel_distance} km\n')
+        
+        #print("Car registration ::", self.registration_no, "\n - Maximum Speed ::", self.max_speed, "km/h \n - Current_speed ::", self.current_speed, "km/h \n - Distance travel ::", self.travel_distance, "km\n")
+
+# creating objects of the class.
+#for i in range(3):
+ #   reg_number=input('Enter the registration number of the car[xxx-nnn]: ')
+  #  max_speed=input('Enter the maximum speed[km/h]')
     
-    def go_to_floor(self,target_floor):
-        self.target_floor=target_floor
-        #while True:   
-        while self.current_floor!=self.target_floor:
-            if self.current_floor<self.target_floor:
-                self.floor_up()
-            else:
-                self.floor_down()
-                    
-elevator =Elevator(0, 12)
-
-
-while True:
-    try:
-        target_floor=int(input('Which floor would you like to go?[0 - 12] '))
-        if target_floor==0:
-            print(f'You are already on {elevator.current_floor}')
-            break
-        elif target_floor>0 and target_floor<=12:
-            elevator.go_to_floor(target_floor)
-            print(f'You have reached to {elevator.current_floor}')
-            break
-        else:
-            print("Floor does not exist.")
-        
-    except ValueError:
-        print('invalid input')  
-    
-
-        
+car1=Car("ABC-123", 142)
+print("\nCar Registration: ",car1.registration_no)
+print("- Maximum Speed: ",car1.max_speed,"km/h")
+print("- Current Speed: ",car1.current_speed,"km/h")
+print("- Travel Distance: ",car1.travel_distance,"km\n")

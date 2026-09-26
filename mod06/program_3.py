@@ -1,21 +1,31 @@
 """
 module_6 program_3
-
-Write a function that gets the quantity of gasoline in American gallons and returns the number converted to litres.
-Write a main program that asks for a volume in gallons from the user and converts the value to liters. 
-The conversion must be done by using the function. Conversions continue until the user inputs a negative value.
+Write a program that asks the user for an integer and tells if the number is a prime number. 
+Prime numbers are number that are only divisible by one or the number itself.
+For example, 13 is a prime number as it can only be divided by 1 or 13 so that the result is an integer.
+On the other hand, 21 is not a prime number as it is divisible by 3 and 7.
 
 """
-def gallons_into_litres(gallon):
-    return float(gallon)*3.78541
-    
-while True:
-    try:
-        gallon=input('Enter the gasoline in gallon ')
-        if float(gallon)<0:
-            print('Conversion Ends')
-            break
+
+prime_counter=0
+num=input("Enter the number ::: ")
+try:
+    num=int(num)
+    if num<=1:
+        print(f'{num} is less or equal to 1')
+    else:
+        for count in range(1, num+1):
+            if(num%count)==0:
+                prime_counter+=1
+            
+        if prime_counter==2:
+            print(f'{num} is a prime number.')
         else:
-            print(f' Gasoline = {gallon} gallons equals to {gallons_into_litres(gallon):0.2f} Litres')
-    except ValueError:
-        print('It is not a number.')   
+            print(f'{num} is not a prime number.')
+                
+except ValueError:
+    print(f'{num} is not integer value.')
+                
+                
+                
+

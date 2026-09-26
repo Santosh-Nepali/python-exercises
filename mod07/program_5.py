@@ -1,5 +1,5 @@
 """
-module_6 program_5
+module_7 program_5
 
 Write a function that gets a list of integers as a parameter.
 The function returns a second list that is otherwise 

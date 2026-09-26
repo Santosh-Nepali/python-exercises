@@ -1,19 +1,22 @@
 """
 module_6 program_4
 
-Write a function that gets a list of integers as a parameter.
-The function returns the sum of all the numbers in the list. 
-For testing, write a main program where you create a list, call the function,
-and print out the value it returned.
+Write a program that asks the user to enter the names of five cities one by on (use a for loop for reading the names) 
+and stores them into a list structure. Finally, the program prints out the names of the cities one by one,
+one city per line, in the same order they were read as input.
+Use a for loop for asking the names and a for/in loop to iterate through the list.
 
 """
-def addition(numbers):
-    sum=0
-    for i in range(len(numbers)):
-        sum =sum+numbers[i]
-    return(sum)    
-    #return sum(numbers)
+city_data=[]
+total_city=5
+# using for to input to the name of city
+print('====== Recording Names of City =========')
+for _ in range(total_city):
+    city=input('Enter the Name of City ::: ')
+    city_data.append(city)
 
-numbers=[4, 6, 8, 90, 45, 31, -1]
-sum=addition(numbers)
-print(f' The sum of {numbers} is :: {sum}')
+# using for loop to display the name of the list 
+
+print('====== Displaying Names of City =========')
+for name_of_city in city_data:
+    print(f'The name of the city is :::: {name_of_city}')

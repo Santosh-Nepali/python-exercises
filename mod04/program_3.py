@@ -1,26 +1,48 @@
-"""
+'''
 module_4 program_3
-Write a program that asks the user to enter numbers 
-until they enter an empty string to quit. 
-Finally, the program prints out the smallest and largest number from the numbers it received.
+Write a program that asks for the biological gender and hemoglobin value (g/l). 
+The program the notifies the user if the hemoglobin value is low, normal or high.
+A normal hemoglobin value for adult females is between 117-155 g/l.
+A normal hemoglobin value for adult males is between 134-167 g/l.
 
-"""
-largest=None        #assigning largest with none type data 
-smallest=None       # Assigning smallest with none type data
-while True:
-    print(' ==== Quit(empty input) ==== ')  #print message within 
-    num=input('Enter the number: ')
-    if num=='':   #checking condition for empty string input
-        break      # it will exit the loop if condition holds true
-    try:
-        num=float(num)     # changing default string datatype into float for number comparision
-        if largest is None or num>largest:   # checking condition for largest number from user data
-            largest=num                      # assigning number into largest variable
-        
-        if smallest is None or num<smallest: # checking condition for smallest number from user data
-            smallest=num                     # assigning number into smallest variable 
-    except ValueError:
-        print(f'It is not numeric.')
-        
-print(f'Largest  :::: {largest:0.2f}')          # printing largest value from lists 
-print(f'Smallest :::: {smallest:0.2f}')        # printing smallest value from list of numbers
+'''
+
+def gender():       # user-defined function for gender input
+    print('Female :::: F')
+    print('Male :::: M')
+    user_gender=input('Enter your Biological Gender')
+    return user_gender      # returning single value 
+
+def hemoglobin(): # user defined function for hemoglobin input of users
+    while True:
+        user_hemoglobin=input('Enter your hemoglobin level in g/l ::')
+        try: 
+            user_hemoglobin=int(user_hemoglobin)
+            if user_hemoglobin<0:
+                print(f'{user_hemoglobin} is not valid')
+                continue
+            break
+        except ValueError:
+            print('Invalid value')
+            continue
+    return user_hemoglobin # returning user's hemoglobin level
+
+user_gender=gender()
+user_hemoglobin=hemoglobin()
+
+if user_gender.upper()=='F':
+
+    if user_hemoglobin<117:
+        print('You are Female Gender and Hemoglobin is low')
+    elif user_hemoglobin>155:
+        print('You are Female and Hemoglobin is high')
+    else:
+        print('You are Female and Hemoglobin is normal')
+
+elif user_gender.upper()=='M':
+    if user_hemoglobin<134:
+        print('You are Male Gender and Hemoglobin is low')
+    elif user_hemoglobin>167:
+        print('You are Male and Hemoglobin is high')
+    else:
+        print('You are Male and Hemoglobin is normal')

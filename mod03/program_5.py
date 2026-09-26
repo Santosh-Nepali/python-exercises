@@ -1,5 +1,5 @@
 """
-module_2 program_5
+module_3 program_5
 
 Write a program that asks the user to enter a mass in medieval units: talents (leiviskä), pounds (naula), and lots (luoti). The program converts the input to full kilograms and grams and outputs the result to the user:
 - One talent is 20 pounds.
