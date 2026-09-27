@@ -1619,42 +1619,6 @@ print(f"Gasoline car {gasoline_car.registration_no}: {gasoline_car.distance_trav
 
 -[ How to write a Good readme](https://readme.so/editor)
 
-## Debugging line of code for the variable
-
-print(f"DEBUG: user_selection = {repr(variable_name)}")
-
-## Note
-
-```javascript
-
-print(f'{iter(numbers_collection)}')
-num_iterator=iter(numbers_collection)
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-print(f'{next(num_iterator)}')
-
-pythons 'for' loop command iterates over an object using the iterator protocol.
-iterators are objects used to iterate over an iterable and implement iterator protocols.
-A for loops calls iter() on an iterable to create an iterator object.
-The iterator object is responsible for returning each item to the loop.
-A for loop calls next() on the iterator object to fetch each item.
-The next() function raises an StopIteration exception when there is nothing left in the iterator object.
-
-In Python, everything is an object.
-
-Simple rule:
-
-Need each value → for number in numbers
-Need a specific position → numbers[index]
-Need both index and value → enumerate(numbers)
-
-```
-
 ## Badges
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
