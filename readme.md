@@ -10,7 +10,7 @@ A total of 6 points can be earned from the exercises associated with each module
 - **Group:** TXL26S1-B
 - **Student ID:** 2630920
 
-## Module 1 (1 and 2. First Program and Setting Up Version Control)
+## Module 1 and module 2 (1 and 2. First Program and Setting Up Version Control)
 
 ##### I have completed exercises 1 and 2
 
@@ -31,7 +31,7 @@ print(f'Hello, {first_name}  {last_name}!')
 
 ```
 
-## Module 2 (Variables and interactive programs)
+## Module 3 (Variables and interactive programs)
 
 ## DONE
 
@@ -212,7 +212,7 @@ print(f'The 4-digits code is :::: {digit4_code}') # prints 4 digits code
 - Create a separate folder project/ for the game inside the Python exercise project, and create a readme.md file inside it. Add the name of your game as the heading and your own name below it.
 - Create a program in the folder that asks for the player’s name and age, stores them in variables, and prints them to the console.
 
-## Module 3 (Conditional Structures)
+## Module 4 (Conditional Structures)
 
 ## DONE
 
@@ -371,7 +371,7 @@ else:
 
 ```
 
-## Module 4 (While loops)
+## Module 5 (While loops)
 
 ## Done
 
@@ -526,7 +526,7 @@ print(f'The pi value is {pi:0.2f}')
 
 ```
 
-## Module 5 (List structures and iterative loops (for))
+## Module 6 (List structures and iterative loops (for))
 
 ## DONE
 
@@ -628,7 +628,7 @@ for name_of_city in city_data:
 
 ```
 
-## Module 6 (Functions)
+## Module 7 (Functions)
 
 ## Done
 
@@ -799,7 +799,7 @@ else:
 
 ```
 
-## Tuple, set, and dictionary
+## Module 8 (Tuple, set, and dictionary)
 
 Done
 
@@ -935,9 +935,9 @@ while True:
 
 ```
 
-## Fundamentals of object-oriented programming
+## Module 9 (Fundamentals of object-oriented programming)
 
-##Done
+## Done
 
 1. Write a Car class that has the following properties: registration number, maximum speed, current speed and travelled distance. Add a class initializer that sets the first two of the properties based on parameter values. The current speed and travelled distance of a new car must be automatically set to zero. Write a main program where you create a new car (registration number ABC-123, maximum speed 142 km/h). Finally, print out all the properties of the new car.
 
@@ -1170,7 +1170,7 @@ for car in car_object:
 
 ```
 
-## Association
+## Module 10 (Association)
 
 # Done
 
@@ -1512,7 +1512,7 @@ print(f"\nRace finished after {hours} hours!")  # then once more ate the end the
 race.print_status()
 ```
 
-## Inheritance
+## Module 11 (Inheritance)
 
 # Done
 
