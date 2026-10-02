@@ -1,0 +1,1 @@
+inventory=[]  # the list variable that TAKE adds to the INVENTORY prints

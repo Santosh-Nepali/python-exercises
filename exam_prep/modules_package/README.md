@@ -123,3 +123,31 @@ Don't confuse:
 - **`__pycache__`** → cached compiled bytecode generated while Python runs that code
 
 If you want, I can also show you **exactly what happens step-by-step when `from package.module import function` executes**, including `sys.path`, `__init__.py`, and `__pycache__`.
+
+## conceptually
+
+from package.module import function
+│
+▼
+Search sys.path
+│
+▼
+Find package/
+│
+▼
+Initialize package/**init**.py
+│
+▼
+Find package/module.py
+│
+▼
+Execute module.py
+│
+▼
+Cache in sys.modules
+│
+▼
+Get `function`
+│
+▼
+Bind it in the current namespace
