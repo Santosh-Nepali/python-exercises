@@ -54,7 +54,15 @@ class Game:
         # only works at the Collection Point, 
         # Picks a random waste item and it to the inventory list variable.
     #---------------------------------------------------------------------
-    def 
+    
+    def command_take(self):
+        if self.current_location!=self.waste_collection_point:
+            print("There is nothing to take, First Move to Collection Point first. ")
+            return
+        item=random.choice(waste_items_database)
+        self.inventory.add_item(item)
+        print(f"Item Picked::: {item}")
+        print("Want to pick more? Yes: Use Command Take Again NO: Use command DROP and Select bins ")
 #checking the code
 #x=Game()
 
