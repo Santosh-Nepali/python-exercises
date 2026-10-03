@@ -151,5 +151,33 @@ class Game:
     def execute(self):
         self.current_user=self.user_manager.signup()
         
+        if self.current_user is None:
+            print("Game is Shutting Down.")
+        else:
+            print(f"\n\n\t\t --------------- Welcome {self.current_user.name} ---------------")
         
+        while True:
+            self.show_menu()
+            print("\n")
+            command=input("Enter the Command ::::: ")
+            if command.upper().strip()=="LOPETA":
+                print("Thanks for playing the game. Good Bye")
+                break
+            elif command.upper().strip()=="INVENTORY":
+                self.command_inventory()
+            elif command.upper().strip()=="TAKE":
+                self.command_take()
+            elif command.upper().strip()=="MOVE":
+                self.command_move()
+            elif command.upper().strip()=="DROP":
+                self.command_drop()
+            elif command.upper().strip()=="SCORE":
+                self.command_score()
+            elif command.upper().strip()=="HELP":
+                self.command_help()
+            elif command.upper().strip()=="USER-PROFILE":
+                self.command_profile()
+            else:
+                print(f"{command} is not recognized")
+                
     
