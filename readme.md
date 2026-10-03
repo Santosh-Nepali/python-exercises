@@ -1617,6 +1617,14 @@ print(f"Electric car {electric_car.registration_no}: {electric_car.distance_trav
 print(f"Gasoline car {gasoline_car.registration_no}: {gasoline_car.distance_travel} km")
 ```
 
+## Module 12 program structure
+
+# Done
+
+# Project 4 - Organize the Structure and Introduce Objects
+
+Note! You can also implement the game project without classes and objects, but in that case you cannot receive full points for the project. The object-oriented structure below is only a first model. For your own game, you can create exactly the classes and objects that are appropriate for it.
+
 -[ How to write a Good readme](https://readme.so/editor)
 
 ## Badges
