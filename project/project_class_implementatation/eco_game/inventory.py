@@ -43,9 +43,9 @@ class Inventory:
 
     def show(self):
         if self.is_empty():
-            print('Your inventory is empty.')
+            print("Your inventory is empty.")
         else:
-            print('Your inventory contains:')
+            print("Your inventory contains:")
 
             for item in self.items:
-                print(' - ' + item.name)
+                print(f" -  + {item['name']}")

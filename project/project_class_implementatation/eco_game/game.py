@@ -6,9 +6,9 @@ and runs the main menu loop
 """
 
 import random
-from user import UserManager
-from waste_item import WasteItem, waste_items_database
-from inventory import Inventory
+from .user import UserManager, User
+from .waste_item import WasteItem, waste_items_database
+from .inventory import Inventory
 
 #-----------------------------------------------------
     # Defining class Game ::: # this is class for Game 
@@ -64,8 +64,9 @@ class Game:
             print("There is nothing to take, First Move to Collection Point first. ")
             return
         item=random.choice(waste_items_database)
+        print(item)
         self.inventory.add_item(item)
-        print(f"Item Picked::: {item}")
+        print(f"Item Picked::: {item['name']}")
         print("Want to pick more? Yes: Use Command Take Again NO: Use command DROP and Select bins ")
 
     #-----------------------------------------------------------------------
@@ -82,11 +83,11 @@ class Game:
             if location.upper()==destination.upper():
                     matched=location
                     break
-            if matched:
-                self.current_location=matched
-                print(f"You move to {self.current_location}.")
-            else:
-                print(f"{destination} is not a valid location.")
+        if matched:
+            self.current_location=matched
+            print(f"You move to {self.current_location}.")
+        else:
+            print(f"{destination} is not a valid location.")
     
     #-------------------------------------------------------------------------
         # drop command method
@@ -156,28 +157,28 @@ class Game:
         else:
             print(f"\n\n\t\t --------------- Welcome {self.current_user.name} ---------------")
         
-        while True:
-            self.show_menu()
-            print("\n")
-            command=input("Enter the Command ::::: ")
-            if command.upper().strip()=="LOPETA":
-                print("Thanks for playing the game. Good Bye")
-                break
-            elif command.upper().strip()=="INVENTORY":
-                self.command_inventory()
-            elif command.upper().strip()=="TAKE":
-                self.command_take()
-            elif command.upper().strip()=="MOVE":
-                self.command_move()
-            elif command.upper().strip()=="DROP":
-                self.command_drop()
-            elif command.upper().strip()=="SCORE":
-                self.command_score()
-            elif command.upper().strip()=="HELP":
-                self.command_help()
-            elif command.upper().strip()=="USER-PROFILE":
-                self.command_profile()
-            else:
-                print(f"{command} is not recognized")
+            while True:
+                self.show_menu()
+                print("\n")
+                command=input("Enter the Command ::::: ")
+                if command.upper().strip()=="LOPETA":
+                    print("Thanks for playing the game. Good Bye")
+                    break
+                elif command.upper().strip()=="INVENTORY":
+                    self.command_inventory()
+                elif command.upper().strip()=="TAKE":
+                    self.command_take()
+                elif command.upper().strip()=="MOVE":
+                    self.command_move()
+                elif command.upper().strip()=="DROP":
+                    self.command_drop()
+                elif command.upper().strip()=="SCORE":
+                    self.command_score()
+                elif command.upper().strip()=="HELP":
+                    self.command_help()
+                elif command.upper().strip()=="USER-PROFILE":
+                    self.command_profile()
+                else:
+                    print(f"{command} is not recognized")
                 
     
