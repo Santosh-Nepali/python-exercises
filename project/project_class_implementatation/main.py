@@ -98,7 +98,7 @@ def command_signup():
         next_id+=1
         return user
     
-
+# Commands as methods 
 #----------------------------
 # User Profile Function
 #----------------------------
