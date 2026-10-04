@@ -1,22 +1,32 @@
-Game Instructions:
-------------------
-1. TAKE
-   -  Only works at the Collection Point — picks up a random waste items across Bio/Paper/Energy/Plastic/Mixed Waste, adds it to inventory
+╔══════════════════════════════════════════════════════════════╗
+║                     🎮  GAME INSTRUCTIONS  🎮                   ║
+╚══════════════════════════════════════════════════════════════╝
 
-2. MOVE
-   - Use this command to move between Collection Point and 5 waste Bins
+  1️⃣  TAKE
+      Only works at the Collection Point — picks up a random
+      waste item across Bio / Paper / Energy / Plastic / Mixed
+      Waste, and adds it to your inventory.
 
-3. DROP
-   - Sort a carried item into whichever bin you're currently standing in — correct bin = +1 point, wrong bin = −1 point with an explanation
+  2️⃣  MOVE
+      Move between the Collection Point and the 5 waste bins.
 
-4. INVENTORY
-   - INVENTORY	Shows what waste items you're currently carrying
+  3️⃣  DROP
+      Sort a carried item into whichever bin you're standing in.
+      ✅ Correct bin → +1 point
+      ❌ Wrong bin   → −1 point, with an explanation
 
-5. SCORE
-   - Shows player's current score
+  4️⃣  INVENTORY
+      Shows the waste items you're currently carrying.
 
-6. USER-PROFILE
-   - Display's registered users details 
+  5️⃣  SCORE
+      Shows your current score.
 
-7. HELP
-   - Explains how to play the game
+  6️⃣  USER-PROFILE
+      Displays registered users' details.
+
+  7️⃣  HELP
+      Explains how to play the game.
+
+──────────────────────────────────────────────────────────────────
+  💡  Tip: Sort fast, sort true — accuracy matters more than speed!
+──────────────────────────────────────────────────────────────────

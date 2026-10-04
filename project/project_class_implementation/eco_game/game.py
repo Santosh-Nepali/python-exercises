@@ -34,7 +34,7 @@ class Game:
        # Menu Display Method
     #----------------------------
     def show_menu(self):
-        print('\n\t\t\t ******** MENU ******** ')
+        print('\n\t\t\t 🌷🌷🌷🌷🌷🌷🌷 MENU 🌷🌷🌷🌷🌷🌷🌷  ')
         print(f'\n\t\t (You are at: {self.current_location} | Score: {self.score})')
         print('TAKE || MOVE || DROP || LOPETA || INVENTORY || SCORE || USER-PROFILE || HELP ')
     
@@ -144,19 +144,26 @@ class Game:
         # help command method
     #----------------------------
     def command_help(self):
-        print("\n=================================================================================================================================")
+        #print("\n=================================================================================================================================")
         try:
             with open("eco_game/instruction.txt", "r") as file:
                 print(file.read())
         except FileNotFoundError:
             print("File not found.")
         
-        print("=====================================================================================================================================")
+        #print("=====================================================================================================================================")
     
     #----------------------------
         # MAIN GAME LOOP
     #----------------------------
     def execute(self):
+        
+        try:
+            with open("eco_game/intro.txt", "r") as file:
+                print(file.read())
+        except FileNotFoundError:
+            print("File not found.")
+                
         self.current_user=self.user_manager.signup()
         
         if self.current_user is None:
