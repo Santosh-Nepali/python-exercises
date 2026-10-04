@@ -51,7 +51,7 @@ Anyone can play this game. Garbage keeps arriving at the collection point and ne
 
 The central aspect of this game is Sustainable Development Perspective. The game supports environmental education by encouring responsible consumption, proper waste separation and resources conservation.
 
-## 5.Conclusion
+## 5. Conclusion
 
 "Sort Fast Sort Right" Game combines education and entertainment to promote environmental awareness and sustainable behaviour. Through interactive sorting bins, immediate feedback, scoring, and educational content, players learn how to manage waste responsibly while developing practical recycling skills.
 
