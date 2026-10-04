@@ -6,7 +6,6 @@ and runs the main menu loop
 """
 
 import random
-from pathlib import Path
 from .user import UserManager, User
 from .waste_item import WasteItem, waste_items
 from .inventory import Inventory
@@ -65,7 +64,7 @@ class Game:
             print("There is nothing to take, First Move to Collection Point first. ")
             return
         item=random.choice(waste_items)
-        print(item)
+        #print(item)
         self.inventory.add_item(item)
         print(f"Item Picked::: {item.name}")
         print("Want to pick more? Yes: Use Command Take Again NO: Use command DROP and Select bins ")
