@@ -49,7 +49,7 @@ class UserManager:
         printing profiles of each and every users one by one.
         
         """
-        if not self.users_log:
+        if not self.users_logs:
             print("Not registered users yet")
             return
         for user in self.users_logs:

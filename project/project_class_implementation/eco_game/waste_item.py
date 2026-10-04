@@ -29,3 +29,12 @@ waste_items_database=[
     {"name": "used tissue", "category": "Mixed Waste", "fact": "Used tissues count as general waste due to contamination."},
     {"name": "greasy pizza box", "category": "Mixed Waste", "fact": "Grease-soaked cardboard usually can't be recycled since the oil contaminates the fibers."},    
 ]
+
+waste_items=[]
+for item in waste_items_database:
+    waste_item=WasteItem(
+        item["name"],
+        item["category"],
+        item["fact"]
+    )
+    waste_items.append(waste_item)

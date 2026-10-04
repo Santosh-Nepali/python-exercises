@@ -1,0 +1,22 @@
+Game Instructions:
+------------------
+1. TAKE
+   -  Only works at the Collection Point — picks up a random waste items across Bio/Paper/Energy/Plastic/Mixed Waste, adds it to inventory
+
+2. MOVE
+   - Use this command to move between Collection Point and 5 waste Bins
+
+3. DROP
+   - Sort a carried item into whichever bin you're currently standing in — correct bin = +1 point, wrong bin = −1 point with an explanation
+
+4. INVENTORY
+   - INVENTORY	Shows what waste items you're currently carrying
+
+5. SCORE
+   - Shows player's current score
+
+6. USER-PROFILE
+   - Display's registered users details 
+
+7. HELP
+   - Explains how to play the game

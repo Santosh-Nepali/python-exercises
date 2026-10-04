@@ -6,8 +6,9 @@ and runs the main menu loop
 """
 
 import random
+from pathlib import Path
 from .user import UserManager, User
-from .waste_item import WasteItem, waste_items_database
+from .waste_item import WasteItem, waste_items
 from .inventory import Inventory
 
 #-----------------------------------------------------
@@ -63,10 +64,10 @@ class Game:
         if self.current_location!=self.waste_collection_point:
             print("There is nothing to take, First Move to Collection Point first. ")
             return
-        item=random.choice(waste_items_database)
+        item=random.choice(waste_items)
         print(item)
         self.inventory.add_item(item)
-        print(f"Item Picked::: {item['name']}")
+        print(f"Item Picked::: {item.name}")
         print("Want to pick more? Yes: Use Command Take Again NO: Use command DROP and Select bins ")
 
     #-----------------------------------------------------------------------
@@ -143,8 +144,14 @@ class Game:
         # help command method
     #----------------------------
     def command_help(self):
-        print("Help command")
+        print("\n=================================================================================================================================")
+        try:
+            with open("eco_game/instruction.txt", "r") as file:
+                print(file.read())
+        except FileNotFoundError:
+            print("File not found.")
         
+        print("=====================================================================================================================================")
     
     #----------------------------
         # MAIN GAME LOOP

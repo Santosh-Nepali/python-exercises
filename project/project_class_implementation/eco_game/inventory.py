@@ -37,6 +37,7 @@ class Inventory:
         item_names = []
 
         for item in self.items:
+            #print({item})
             item_names.append(item.name)
 
         return item_names
@@ -48,4 +49,4 @@ class Inventory:
             print("Your inventory contains:")
 
             for item in self.items:
-                print(f" -  + {item['name']}")
+                print(f" -  {item.name}")
