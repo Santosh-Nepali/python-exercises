@@ -1,0 +1,38 @@
+[
+    {
+        "user_id": 1,
+        "name": "santosh",
+        "age": 32,
+        "score": 0
+    },
+    {
+        "user_id": 2,
+        "name": "santosh",
+        "age": 32,
+        "score": 0
+    },
+    {
+        "user_id": 3,
+        "name": "santosh",
+        "age": 22,
+        "score": 1
+    },
+    {
+        "user_id": 4,
+        "name": "lopeta",
+        "age": 22,
+        "score": 0
+    },
+    {
+        "user_id": 5,
+        "name": "paru",
+        "age": 33,
+        "score": 1
+    },
+    {
+        "user_id": 6,
+        "name": "arya",
+        "age": 44,
+        "score": -1
+    }
+]

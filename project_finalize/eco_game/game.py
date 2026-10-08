@@ -1,14 +1,13 @@
 """
 game.py
 -------
-Here Game class holds the game state such as location, score and inventory) 
-and runs the main menu loop
+Here Game class holds the game state such as location, score and inventory and runs the main menu loop
 """
 
 import random
-from .user import UserManager, User
-from .waste_item import WasteItem, waste_items
-from .inventory import Inventory
+from .user import *
+from .waste_item import *
+from .inventory import *
 
 #-----------------------------------------------------
     # Defining class Game ::: # this is class for Game 
@@ -22,8 +21,11 @@ class Game:
     # class Game magic initializer
     def __init__(self):
         self.user_manager=UserManager()
+        self.current_user=None
+        
         self.inventory=Inventory()
-        self.score=0
+        #self.score=0
+       
         self.current_location=self.waste_collection_point
         self.all_locations=[self.current_location] + self.bin_locations
 
@@ -33,12 +35,10 @@ class Game:
        # Menu Display Method
     #----------------------------
     def show_menu(self):
-        print('\n\t\t\t 🌷🌷🌷🌷🌷🌷🌷 MENU 🌷🌷🌷🌷🌷🌷🌷  ')
-        print(f'\n\t\t (You are at: {self.current_location} | Score: {self.score})')
-        print('TAKE || MOVE || DROP || LOPETA || INVENTORY || SCORE || USER-PROFILE || HELP ')
+        print('\n\t 🌷🌷🌷🌷🌷🌷🌷 MENU 🌷🌷🌷🌷🌷🌷🌷  ')
+        print(f'\n\t (You are at: {self.current_location} | Score: {self.current_user.score})')
+        print('TAKE || MOVE || DROP || LOPETA || INVENTORY || SCORE || HELP ')
     
-
-
     #------------------------------------------------------------------
       # command_inventory methods to prints the items of inventory list 
     #-------------------------------------------------------------------
@@ -119,11 +119,11 @@ class Game:
         # if correcting sorting in to the bin locations awarding the player +1 and 
         # Incorrecting sorting of items penalize by -1 
         if matching_item.category==self.current_location:
-            self.score+=1
-            print(f"Correct !! +1 points. (score: {self.score})")
+            self.current_user.score+=1
+            print(f"Correct !! +1 points. (score: {self.current_user.score})")
         else:
-            self.score-=1
-            print(f"Wrong Bin !! -1 point. (Score: {self.score})")
+            self.current_user.score-=1
+            print(f"Wrong Bin !! -1 point. (Score: {self.current_user.score})")
             print(f"Correct Bin: {matching_item.category}")
             print(f"Reason :{matching_item.fact}")
         
@@ -135,7 +135,7 @@ class Game:
         # score command method
     #----------------------------
     def command_score(self):
-        print(f"Your score is : {self.score}")
+        print(f"Your score is : {self.current_user.score}")
         
     
     #----------------------------
@@ -162,18 +162,20 @@ class Game:
         except FileNotFoundError:
             print("File not found.")
                 
-        self.current_user=self.user_manager.signup()
+        self.current_user=self.user_manager.start_user()
         
         if self.current_user is None:
             print("Game is Shutting Down.")
         else:
-            print(f"\n\n\t\t --------------- Welcome {self.current_user.name} ---------------")
+            print(f"\n\n\t ------------ Welcome {self.current_user.name} -------------")
         
             while True:
                 self.show_menu()
                 print("\n")
                 command=input("Enter the Command ::::: ")
                 if command.upper().strip()=="LOPETA":
+                    self.user_manager.save_users()
+                    print("Your score has been saved.")
                     print("Thanks for playing the game. Good Bye")
                     break
                 elif command.upper().strip()=="INVENTORY":
@@ -188,8 +190,6 @@ class Game:
                     self.command_score()
                 elif command.upper().strip()=="HELP":
                     self.command_help()
-                elif command.upper().strip()=="USER-PROFILE":
-                    self.command_profile()
                 else:
                     print(f"{command} is not recognized")
                 

@@ -1,0 +1,29 @@
+╔══════════════════════════════════════════════════════════════╗
+║                     🎮  GAME INSTRUCTIONS  🎮                ║
+╚══════════════════════════════════════════════════════════════╝
+
+  1  TAKE
+     Only works at the Collection Point — picks up a random
+     waste item across Bio / Paper / Energy / Plastic / Mixed
+     Waste, and adds it to your inventory.
+
+  2️ MOVE
+      Move between the Collection Point and the 5 waste bins.
+
+  3️ DROP
+      Sort a carried item into whichever bin you're standing in.
+        ✅ Correct bin → +1 point
+        ❌ Wrong bin   → −1 point, with an explanation
+
+  4️ INVENTORY
+      Shows the waste items you're currently carrying.
+
+  5️ SCORE
+      Shows your current score.
+
+  6️ HELP
+      Explains how to play the game.
+ 
+──────────────────────────────────────────────────────────────────
+  💡  Tip: Sort fast, sort true — accuracy matters more than speed!
+──────────────────────────────────────────────────────────────────
