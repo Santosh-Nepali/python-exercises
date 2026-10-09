@@ -15,7 +15,7 @@
         "user_id": 3,
         "name": "santosh",
         "age": 22,
-        "score": 1
+        "score": 0
     },
     {
         "user_id": 4,
@@ -39,6 +39,12 @@
         "user_id": 7,
         "name": "ashish",
         "age": 23,
+        "score": 0
+    },
+    {
+        "user_id": 8,
+        "name": "eix",
+        "age": 3,
         "score": 0
     }
 ]
