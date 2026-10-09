@@ -34,9 +34,7 @@ class User:
         }
 
 class UserManager:
-    """ user details managemenent and handling login or signup"""
-    
-    
+    """ user details managemenent and handling login or signup """
     def __init__(self, filename="users.json"):
         self.filename=filename
         self.users_logs=[]
