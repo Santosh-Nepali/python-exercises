@@ -46,5 +46,17 @@
         "name": "eix",
         "age": 3,
         "score": 0
+    },
+    {
+        "user_id": 9,
+        "name": "ava",
+        "age": 35,
+        "score": 0
+    },
+    {
+        "user_id": 10,
+        "name": "Alireza",
+        "age": 30,
+        "score": -2
     }
 ]
