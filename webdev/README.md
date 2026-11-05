@@ -28,3 +28,15 @@ Add notes about any problems or extra features here.
 Completed assignments:
 
 ... and so on ...
+
+<!--
+target id is innerHTML  with += to print into new lines
+
+const target = document.querySelector("#target");
+target.innerHTML  = `The addition of ${firstNum} + ${secondNum} + ${thirdNum} is ${addition(firstNum, secondNum, thirdNum)}.<br>`;
+target.innerHTML += `The product of ${firstNum} * ${secondNum} * ${thirdNum} is ${product(firstNum, secondNum, thirdNum)}.<br>`;
+target.innerHTML += `The average of ${firstNum}, ${secondNum} and ${thirdNum} is ${average(firstNum, secondNum, thirdNum)}.`;
+
+
+
+ -->

@@ -1,13 +1,31 @@
-<!-- Write a program that logs to the console this text: I'm printing to console! -->
+<!-- Write a program that prompts for three integers. 
+The program prints the sum, product and average of the numbers to the HTML document. (3p)
+remember to convert strings to numbers when adding them together. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>module-1 question-1</title>
-    <script src="script_1.js"></script>
+    <title> module-1 question-3 </title>
+    <script src="script_3.js" defer></script> 
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1> Console text : I am printing to console</h1>
+    <p id="invalidData"></p>
+    <h1 id="additionValue"></h1>
+    <h1 id="productValue"></h1>
+    <h1 id="averageValue"></h1>
 </body>
 </html>
+
+<!-- The <script> tag is in the <head>, so the browser runs script_3.js before it has built the <body>. 
+    When the code reaches document.querySelector("#additionValue"), that element doesn’t exist yet.
+    The result is null, and setting .innerHTML on null throws an error, so nothing is displayed.
+    we can confirm this by opening DevTools (right-click, Inspect, Console tab). 
+    We should see something like:
+        Uncaught TypeError: Cannot set properties of null (setting 'innerHTML')
+    The prompts probably appear on a blank white page for the same reason: the page hasn’t been drawn yet. 
+    defer tells the browser to download the script immediately but run it only after the whole HTML is parsed. 
+Alternative: we can also move the script to the end of the body.  
+        
+-->

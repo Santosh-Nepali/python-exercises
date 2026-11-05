@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Redaction+10:ital,wght@0,400;0,700;1,400&family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+#invalidData{
+    font-family: "Redaction 10", serif;
+    font-size: xx-large;
+    border: 3px;
+    margin: auto;
+    padding: 45px;
+    background-color: blanchedalmond;
+    /* box model */
+    width: 400px;
+    height: auto;
+    text-align: center;
+    font-weight: 700;
+}
+#additionValue{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+}
