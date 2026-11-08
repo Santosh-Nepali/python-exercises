@@ -1,0 +1,25 @@
+<!-- 6. Write a program that prints the text “Should I calculate the square root?” in a confirmation window. 
+ If the user selects OK, the program asks for the number and calculates and prints its square root to the HTML document. If the user selects Cancel, the program prints the text “The square root is not calculated.” to the HTML document (3p)
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module-1 Question-6 </title>
+    <link rel="stylesheet" href="style_6.css">
+    <script src="script_6.js" defer></script> 
+</head>
+ <body>
+    <h1>Square Root Calculator</h1>
+    <!-- Calculation Section -->
+    <div id="calculator" hidden>
+        <label>Enter the number: 
+            <input type="text" id="value1" placeholder="Enter the number">
+            <button type="button" onclick="srCalculate()" id="button">Calculate</button>
+        </label>
+    </div>
+    <!-- Display the result -->
+    <p id="result"></p> 
+ </body>
+ </html>
