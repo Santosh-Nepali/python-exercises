@@ -1,0 +1,22 @@
+<!-- 5. Write a program that asks the user to enter a year and notifies the user whether the input year is a leap year. A year is a leap year if it is divisible by four. However, years divisible by 100 are leap years only if they are also divisible by 400. Print the result on the HTML document. (3p) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module1_Question_8</title>
+    <script src="script_8.js" defer></script>
+    <link rel="stylesheet" href="style_8.css">
+</head>
+<body>
+    <label>
+        Enter Starting Year: 
+        <input type="text" id="firstYear" placeholder="first year"><br>
+        Enter Ending Year: 
+        <input type="text" id="endYear" placeholder="ending year">
+        <input type="submit" value="Submit" onclick="checkYear()">
+    </label>
+    <ul class="resultShow"> 
+    </ul>
+</body>
+</html>
