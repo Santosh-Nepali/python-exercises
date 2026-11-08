@@ -3,17 +3,17 @@
 
 function checkPrime() {
 
-    let number = parseInt(document.getElementById("number").value);
+    let number1 = parseInt(document.getElementById("number1").value);
 
     let isPrime = true;
 
-    if (number <= 1) {
+    if (number1 <= 1) {
         isPrime = false;
     }
     else {
-        for (let i = 2; i < number; i++) {
+        for (let i = 2; i < number1; i++) {
 
-            if (number % i == 0) {
+            if (number1 % i == 0) {
                 isPrime = false;
                 break;
             }
@@ -22,10 +22,10 @@ function checkPrime() {
 
     if (isPrime) {
         document.getElementById("result").innerHTML =
-            number + " is a Prime Number.";
+            `${number1}  is a Prime Number.`;
     }
     else {
         document.getElementById("result").innerHTML =
-            number + " is NOT a Prime Number.";
+            `${number1}  is NOT a Prime Number.`;
     }
 }
