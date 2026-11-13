@@ -1,0 +1,28 @@
+*{
+    background-color: cadetblue;
+    border: 10px;
+    padding: 10px;
+    gap: 20px;
+}
+#totalPerson{
+    background-color: white;
+    border-radius: 10px;
+ 
+}
+#submit{
+    border-radius: 16px;
+    background-color: black;
+    color: white;
+  
+}
+#addName{
+    border-radius: 16px;
+    background-color: black;
+    color: white;
+}
+.nameList{
+    background-color: white;
+    border-radius: 10px;
+ 
+
+}
