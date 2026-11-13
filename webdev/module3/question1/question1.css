@@ -1,0 +1,10 @@
+#userTable{
+    align-items: center;
+}
+#userInput{
+    background-color:antiquewhite;
+    gap: 10px;
+}
+#reverseOrder{
+    background-color: blueviolet;
+}
