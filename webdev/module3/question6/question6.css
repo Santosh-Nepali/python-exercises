@@ -39,3 +39,6 @@ h3{
 #rollBtn:active {
     transform: scale(0.95);
 }
+#rollingResult {
+    display: inline-block;
+}
