@@ -1,12 +1,20 @@
 "use strict";
-function rollingDice(){
-    let diceValue="";
-    const rollingValue=document.querySelector("#rollingResult");
-    diceValue=Math.floor(Math.random()*6)+1;
-    do{
-        console.log(`${diceValue}`);
-        rollingValue.innerHTML+=`<br><li> ${diceValue}</li>`;
-    }while(diceValue!=6);   
+function randomGenerator(){
+    
+    let randomNumber=Math.floor(Math.random()*6)+1;
+    return randomNumber;
+
 }
 
-rollingDice();
+function rollingDice(){
+    const rollingValue=document.querySelector("#rollingResult");
+    let diceValue="";
+    //Clearing the previous results
+    rollingValue.innerHTML="";
+
+    while(diceValue!=6){
+        diceValue=randomGenerator();
+        console.log(`${diceValue}`);
+        rollingValue.innerHTML+=`<br><li> ${diceValue}</li>`;
+    }   
+}

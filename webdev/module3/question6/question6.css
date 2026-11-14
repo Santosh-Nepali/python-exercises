@@ -1,26 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Black+Ops+One&display=swap');
 *{
     text-align: center;
+    background-color: rgb(219, 202, 105);
+    font-family: "BBH Bogle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #dice {
-    font-size: 100px;
+    font-size: 200px;
     margin: 4px;
     display: inline-block;
 }
 #rollBtn{
-    /* background-color: blue; */
-    color: white;
+    border-radius: 30px;
+    background-color: rgba(189, 54, 226, 0.452); 
+    color: rgb(241, 237, 237);
     padding: 12px 15px;
     border: none;
     cursor: pointer;
     transition: 0.3s;
     align-items: center;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
 }
-.rollBtn:hover{
+#rollBtn:hover{
     background-color: green;
     color: yellow;
     transform: scale(1.1);
 }
-.rollBtn:active {
+#rollBtn:active {
     transform: scale(0.95);
 }

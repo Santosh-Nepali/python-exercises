@@ -10,11 +10,9 @@
 <body>
     <h1>Dice Rolling Game</h1>
     <h3>Write a function that returns a random dice roll between 1 and 6. The function should not have any parameters. Write a main program that rolls the dice until the result is 6. The main program should print out the result of each roll in an unordered list. (2p)</h3>
-
-
     <div id="dice">🎲</div>
-    <div id="rollBtn">
-        <input type="button" value="Rolling" onclick="rollingDice()">
+    <div>
+        <button type="button" id="rollBtn" onclick="rollingDice()">Roll Dice</button>
     </div>
     <div>
         <ul id="rollingResult">
