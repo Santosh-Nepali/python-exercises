@@ -1,0 +1,26 @@
+*{
+    text-align: center;
+}
+
+#dice {
+    font-size: 100px;
+    margin: 4px;
+    display: inline-block;
+}
+#rollBtn{
+    /* background-color: blue; */
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+}
+.rollBtn:hover{
+    background-color: green;
+    color: yellow;
+    transform: scale(1.1);
+}
+.rollBtn:active {
+    transform: scale(0.95);
+}
