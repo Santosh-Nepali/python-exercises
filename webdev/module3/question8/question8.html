@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Module 3 question8</title>
     <link rel="stylesheet" href="question8.css">
     <script src="question8.js" defer></script>
 </head>
@@ -16,22 +16,21 @@
         Print the result to HTML document.
     </header>
     <content>
-     
+        <div>
             <h3> Concatenating List of strings From Array</h3>
-            <div>
-            
-            
-            
-            </div >
-            <label for="txtName1">Enter the String :: </label>
-                <input type="text" id="txtName1" placeholder="enter string">
-                <button type="button" id="addBtn" onclick="getStrings()">Add</button>
-     
-
-        <div id="stringConcat">
-
+            <label for="txtBox">Enter the String :: </label>
+            <input type="text" id="txtBox" placeholder="enter string">
+            <span id="decorBtn">
+                <button id="addBtn" class="commonDecorBtn">Add String</button>
+                <button id="finishBtn" class="commonDecorBtn">Finish</button>
+            </span>
+            <p id="message"></p>
         </div>
 
+        <div id="stringConcat">
+            <h3>Final Result: </h3>
+            <p id="result"></p>
+        </div>
     </content>
     
 </body>
