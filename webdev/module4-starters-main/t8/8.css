@@ -1,0 +1,21 @@
+
+*{
+    background-color: burlywood;
+    margin: 10px;
+}
+#num1{
+    background-color: white;
+}
+
+#num2{
+    background-color: white;
+}
+#operation{
+    background-color: white;
+}
+#start{
+    border-color: aqua;
+    padding: 5px;
+    background-color: black;
+    color:white;
+}

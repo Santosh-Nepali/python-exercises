@@ -62,20 +62,16 @@ Completed assignments:
 - Task 1: 2 p
 - Task 2: 2 p
 - Task 3: 2 p
-<!-- - Task 4: 2 p
-- Task 5: 2 p
-- Task 6: 2 p -->
+- Task 4: 2 p
+- Task 5: 8 p
+- Task 6: 1 p
 - Task 7: 2 p
-- Task 8: 8 p
-- Task 9: 1 p
+- Task 8: 4 p
+- Task 9: 4 p
 - Task 10: 2 p
-- Task 11: 4 p
-- Task 12: 4 p
-- Task 13: 2 p
-- Task 14: 6 p
 
 Completed assignments:
-**total 25p**
+**total 29p**
 
 <!--
 target id is innerHTML  with += to print into new lines

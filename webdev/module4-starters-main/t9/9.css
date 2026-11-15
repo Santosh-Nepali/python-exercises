@@ -1,0 +1,14 @@
+*{
+    background-color: burlywood;
+    margin: 10px;
+}
+
+#calculation{
+    background-color: white;
+}
+#start{
+    border-color: aqua;
+    padding: 5px;
+    background-color: black;
+    color:white;
+}
