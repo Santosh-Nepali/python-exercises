@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module3 question 9</title>
+    <link rel="stylesheet" href="question9.css">
+    <script src="question9.js" defer></script>
 </head>
 <body>
     <header>
         Write a function called even(), which receives an array containing numbers as a parameter. The function returns a second (usually smaller) array which has the even numbers of the original array. The function must not make changes to the original array. (3p)
         Print both the original array and the new array to the console in the main program after you have called the function.
     </header>
+    <container>
+        <div>
+            <label for="numBox" >Enter the number::</label>
+            <input type="number" id="numBox" min="1", placeholder="Enter number">
+            <button id="addNum" class="commonBtn"> Add </button>
+            <button id="finnishBtn" class="commonBtn">Process for Even array</button>
+            <br>
+        </div>
+       
+        <div>
+            <button id="originalArray" class="commonBtn" hidden>Original Array</button>
+            <button id="evenArray" class="commonBtn" hidden>Even Array</button>
+        </div>
+
+        <div>
+            <p id="message">  </p>
+                <table>
+                    <tr>
+                        <th id="original"> Original Array </th>
+                        <th id="even">Even Array </th>
+                    </tr>
+                </table>
+        </div>
+        
+    </container>
     
 </body>
 </html>

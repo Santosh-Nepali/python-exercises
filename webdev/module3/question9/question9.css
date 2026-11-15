@@ -1,16 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module3 question 9</title>
-</head>
-<body>
-    <header>
-        Write a function called even(), which receives an array containing numbers as a parameter. The function returns a second (usually smaller) array which has the even numbers of the original array. The function must not make changes to the original array. (3p)
-        Print both the original array and the new array to the console in the main program after you have called the function.
-    </header>
-    
-    
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    background-color:#075247;
+    color: #FFFFFF;
+    margin: 20px;
+    border: 20px;
+}
+header{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+
+}
+
+container{
+    font-size: xx-large;
+    text-align: center;
+}
+#numBox{
+    background-color: white;
+    font-size: xx-large;
+    color: black;
+}
+.commonBtn {
+    border-radius: 10px;
+    background-color: rgba(212, 121, 237, 0.452); 
+    color: rgb(241, 237, 237);
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+    font-family: "Inter", sans-serif;;
+    font-weight: 400;
+    font-style: normal;
+    font-size:large;
+}
+.commonBtn:hover{
+    background-color: green;
+    color: yellow;
+    transform: scale(1.1);
+}
+.commonBtn:active {
+    transform: scale(0.95);
+}
+table{
+    display: inline-block;
+
+
+}
+table th{
+
+    padding: 50px;
+}

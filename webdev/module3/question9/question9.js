@@ -1,15 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module3 question 9</title>
-</head>
-<body>
-    <header>
-        Write a function called even(), which receives an array containing numbers as a parameter. The function returns a second (usually smaller) array which has the even numbers of the original array. The function must not make changes to the original array. (3p)
-        Print both the original array and the new array to the console in the main program after you have called the function.
-    </header>
+"use strict";
+
+//Defining empty array
+let numArray=[];
+let evenListArray=[];
+
+// Accessing all the elements of html elements
+let numBox=document.getElementById("numBox");
+let addNum=document.getElementById("addNum");
+let finnishBtn=document.getElementById("finnishBtn");
+let originalArray=document.getElementById("originalArray");
+let evenArray=document.getElementById("evenArray");
+let message=document.getElementById("message");
+
+//register users enter value
+addNum.addEventListener("click", function(){
+    let eachNum=numBox.value.trim();
+    if(eachNum==""){
+        message.textContent="Please Enter numbers.";
+        return;
+    }
+    numArray.push(eachNum);
+    console.log(numArray);
+
+//clearing the values 
+numBox.textContent="";
+numBox.focus();
+message.textContent="";
+});
+
+// action after lopeta
+finnishBtn.addEventListener("click", function(){
+    evenListArray=even(numArray);
+
+    // hiding lopeta but unhiding even and original button
+    finnishBtn.hidden=true;
+    originalArray.hidden=false;
+    evenArray.hidden=false;
+    addNum.hidden=true;
     
-</body>
-</html>
+    //clearing the values 
+    numBox.textContent="";
+    numBox.focus();
+});
+
+//function for arranging only even number array
+function even(numArray){
+    let newEvenArray=[];
+
+    for(let each of numArray){
+        if(each%2==0){
+            newEvenArray.push(each);
+        }
+
+    }
+    return newEvenArray;
+}
+
+// original Array list 
+originalArray.addEventListener("click", function(){
+    /* document.getElementById("original").textContent=`${numArray}` */
+    for(let each of numArray){
+        document.querySelector("#original").innerHTML+=`<br>${each}`;
+        }
+    });
+
+evenArray.addEventListener("click", function(){
+    /* document.getElementById("#even").textContent=`${evenListArray}`;
+      */   
+    for( let each of evenListArray){
+        document.querySelector("#even").innerHTML+=`<br>${each}`;
+        } 
+      
+    });

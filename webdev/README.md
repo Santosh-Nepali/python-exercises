@@ -31,8 +31,12 @@ Add notes about any problems or extra features here.
 
 [My link to js mod 1 folder atusers.metropolia.fi ](https://users.metropolia.fi/~santonep/persional_assignment_modules/module2/)
 
+Completed assignments:
+
 - Task 1: 2 p
 - Task 2: 5 p
+
+**Total 7p**
 
 ### JS module 3
 
@@ -44,12 +48,12 @@ Add notes about any problems or extra features here.
 - Task 4: 2 p
 - Task 5: 2 p
 - Task 6: 2 p
-- Task 7: 2 p
 - Task 8: 2 p
 - Task 9: 3 p
 - Task 10: 8 p
-  Completed assignments:
 
+Completed assignments:
+**total 25p**
 ... and so on ...
 
 <!--
