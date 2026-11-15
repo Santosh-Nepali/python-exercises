@@ -57,7 +57,7 @@ Completed assignments:
 
 ### JS Module 4: DOM and events
 
-[My link to js mod 2 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module4/)
+[My link to js mod 2 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module4-starters-main/)
 
 - Task 1: 2 p
 - Task 2: 2 p
