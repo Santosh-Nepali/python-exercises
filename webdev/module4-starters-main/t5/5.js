@@ -1,4 +1,5 @@
 'use strict';
+
 const picArray = [
   {
     title: 'Title 1',
@@ -92,4 +93,45 @@ const picArray = [
   },
 ];
 
-// add your code here
+// Selecting the section element
+
+const target = document.getElementById("pictures");
+
+// Looping through picArray
+for (let i = 0; i < picArray.length; i++) {
+  const article = document.createElement("article");  // Creating article element
+
+  const heading = document.createElement("h2"); // Creating heading
+  heading.textContent = picArray[i].title;
+
+// Creating image
+  const image = document.createElement("img");
+  image.src = picArray[i].image.medium;
+  image.alt = picArray[i].title;
+
+// Creating image caption
+  const caption = document.createElement("figcaption");
+  caption.textContent = picArray[i].caption;
+
+// Creating figure element
+  const figure = document.createElement("figure");
+
+// Add image and caption inside figure
+  figure.appendChild(image);
+  figure.appendChild(caption);
+
+// Create description paragraph
+  const description = document.createElement("p");
+  description.textContent = picArray[i].description;
+
+// Add all elements inside article
+  article.appendChild(heading);
+  article.appendChild(figure);
+  article.appendChild(description);
+
+// Add article inside section
+  target.appendChild(article);
+}
+
+
+
