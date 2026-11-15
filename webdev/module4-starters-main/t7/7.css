@@ -1,0 +1,12 @@
+#target{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+#trigger{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large; 
+    background-color: blueviolet;
+    color: aliceblue;  
+    text-align: center;
+}
