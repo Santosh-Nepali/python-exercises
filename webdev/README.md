@@ -29,7 +29,7 @@ Add notes about any problems or extra features here.
 
 #### Js modules 2
 
-[My link to js mod 1 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module2/)
+[My link to js mod 2 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module2/)
 
 Completed assignments:
 
@@ -40,7 +40,7 @@ Completed assignments:
 
 ### JS module 3
 
-[My link to js mod 2 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module3/)
+[My link to js mod 3 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module3/)
 
 - Task 1: 2 p
 - Task 2: 2 p
@@ -57,7 +57,7 @@ Completed assignments:
 
 ### JS Module 4: DOM and events
 
-[My link to js mod 2 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module4-starters-main/)
+[My link to js mod 4 folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module4-starters-main/)
 
 - Task 1: 2 p
 - Task 2: 2 p
@@ -74,6 +74,13 @@ Completed assignments:
 **total 29p**
 
 ### Python & Flask server
+
+[My link to js mod Python and Flask server folder at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/flask_server_python/)
+
+- Task 1: 4 p
+- Task 2: 10 p
+  Completed assignments:
+  **total 14p**
 
 <!--
 target id is innerHTML  with += to print into new lines
