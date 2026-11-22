@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Link JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer ></script>
+    <title>English to Finnish Translation </title>
+</head>
+<body>
+<header>
+    <div>
+        <h1>FinnLingo - English to Finnish translator</h1>
+    </div>
+</header>
+<content>
+    <form id="form1">
+        <label for="textbox1"> English word </label>
+        <input type="text" id="textbox1" placeholder="English word please">
+        <button type="submit" id="btnSubmit">Submit</button>
+        <button type="reset" id="btnReset">Reset</button>
+    </form>
+<p id="result"></p>   
+</content> 
+</body>
+</html>
