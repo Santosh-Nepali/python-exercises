@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    background:#FFD166;
+}
+
+header h1{
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #073B4C;
+   /*  -webkit-text-stroke: 1px#F46D6E; */
+    
+    /* Layered offset effect */
+    text-shadow: 
+        1px 1px 0 #00a5b5,
+        2px 2px 0 #F46D6E;;
+   /*  stroke-color:#3B82AA ;*/
+
+} 
+content {
+
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 700px;
+    font-style: normal;
+    color: #073B4C;
+    text-align: center;
+    font-size: large;
+}
+content #textbox1{
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px;
+}
+
+content #btnSubmit, #btnReset{
+    color: white; /*color of text*/
+    background-color: black; /*background color of button*/
+    padding: 12px 24px; /*spacing text and border*/
+    border: none;
+    border-radius: 8px; /*makes vertices of botton rounded*/
+    font-size: 16px;
+    cursor: pointer; /*color of text*/
+}
+content #btnSubmit:hover, #btnReset:hover{
+    background-color: rgb(11, 92, 112);
+
+}
