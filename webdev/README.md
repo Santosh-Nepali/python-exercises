@@ -82,6 +82,15 @@ Completed assignments:
   Completed assignments:
   **total 14p**
 
+###JS Module 5: AJAX
+[My link to js moddule 5: AJAX at users.metropolia.fi](https://users.metropolia.fi/~santonep/persional_assignment_modules/module5/)
+
+- Task 1: 2 p
+- Task 2: 3 p
+- Task 3: 7 p
+  Completed assignments:
+  **total 12p**
+
 <!--
 target id is innerHTML  with += to print into new lines
 
