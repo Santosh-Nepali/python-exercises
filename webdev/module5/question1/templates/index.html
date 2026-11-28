@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TV Series Search</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>TV Series Search</h1>
+
+    <form id="search-form" action="https://api.tvmaze.com/search/shows">
+      <input id="query" name="q" type="text" />
+      <input type="submit" value="Search" />
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+      document
+        .getElementById("search-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const query = document.getElementById("query").value.trim();
+          if (!query) return;
+
+          const res = await fetch(
+            "https://api.tvmaze.com/search/shows?q=" +
+              encodeURIComponent(query),
+          );
+          const data = await res.json();
+
+          const exact = data.filter(
+            (item) => item.show.name.toLowerCase() === query.toLowerCase(),
+          );
+
+          if (exact.length === 0) {
+            const msg = `No exact match found for "${query}"`;
+            console.log(msg);
+            document.getElementById("results").textContent = msg;
+            return;
+          }
+
+          let text = "";
+          exact.forEach((item) => {
+            const s = item.show;
+            text += `Name: ${s.name}\nPremiered: ${s.premiered}\nGenres: ${s.genres.join(", ")}\nRating: ${s.rating.average}\nStatus: ${s.status}\n\n`;
+          });
+
+          console.log(text);
+          document.getElementById("results").textContent =
+            "The list displayed into the console";
+        });
+    </script>
+  </body>
+</html>
